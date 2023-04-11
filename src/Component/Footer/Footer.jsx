@@ -12,7 +12,37 @@ import logo from "../../Img/logo.svg";
 const Footer = () => {
   return (
     <>
-      <SimpleGrid columns={[1, 1, 1, 2]} spacing={5} w="80%" mx="auto" mt="10" pb="10">
+      <Box bg="#e8e9ef" color="#555873" w="85%" mx="auto" borderRadius={"15px"}>
+        <Box
+          display="flex"
+          gap="2.5rem"
+          justifyContent={"space-around"}
+          flexWrap="wrap"
+          py="3rem"
+          px={["2rem", "2rem", "2rem", "4rem", "4rem"]}
+        >
+          <Text> How It Works</Text>
+          <Text>About Us</Text>
+          <Text>Why Choose Us</Text>
+          <Text>Questions</Text>
+          <Text>Definitions</Text>
+          <Text>Rates & Fees</Text>
+          <Text>Lending Policy</Text>
+          <Text>Privacy Policy</Text>
+          <Text>Terms of Use</Text>
+          <Text>Disclaimer</Text>
+          <Text>Contact</Text>
+          <Text>E-Consent</Text>
+        </Box>
+      </Box>
+      <SimpleGrid
+        columns={[1, 1, 1, 2]}
+        spacing={5}
+        w="85%"
+        mx="auto"
+        mt="10"
+        pb="10"
+      >
         <Box>
           <Text color="#2b335c" fontWeight={"700"} fontSize="1.25rem">
             Important Disclosures. Please Read Carefully.
@@ -113,7 +143,7 @@ const Footer = () => {
 
       <Divider h="0.5px" bg="grey" />
 
-      <SimpleGrid columns={[1, 1, 1, 2]} spacing={5} w="80%" mx="auto" mt="10">
+      <SimpleGrid columns={[1, 1, 1, 2]} spacing={5} w="85%" mx="auto" mt="10">
         <Box>
           <HStack justifyContent={["center", "center", "center", "flex-start"]}>
             <Image src={logo} alt="logo" />

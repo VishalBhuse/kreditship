@@ -24,34 +24,6 @@ const Faq = () => {
     <>
       <SimpleGrid
         display={"flex"}
-        justifyContent={["center", "center", "center", "space-between"]}
-        w={["100%", "100%", "80%", "80%", "80%"]}
-        mx={"auto"}
-        mt="3"
-        pb="10"
-      >
-        <Box>
-          <Image src={logo} alt="logo" />
-        </Box>
-        <Box>
-          <Hide below="lg">
-            <Button
-              color={"#1d36a0"}
-              bg={"white"}
-              _hover={{ bg: "white" }}
-              border={"1px solid blue"}
-              px={7}
-              py={6}
-              fontWeight={500}
-            >
-              Get Loan{" "}
-              <BsArrowRight style={{ marginLeft: "25px", color: "#1d36a0" }} />{" "}
-            </Button>
-          </Hide>
-        </Box>
-      </SimpleGrid>
-      <SimpleGrid
-        display={"flex"}
         justifyContent={"space-between"}
         spacing={2}
         w="80%"
