@@ -101,7 +101,7 @@ const Home = () => {
               fontWeight="700"
               fontSize={["1.7rem", "1.7rem", "2rem", "3rem"]}
               ml="5rem"
-              left="90%"
+              left="85%"
               top="50%"
               transform="translate(-50%, -50%)"
               width="80%"

@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Heading,
   HStack,
   Image,
@@ -10,7 +11,8 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import logo from "../../Img/logo.svg";
-import MultiForm from "./MultiForm";
+import banner from "../../Img/banner.svg";
+import SingleForm from "./SingleForm";
 
 const Banner = () => {
   return (
@@ -23,12 +25,6 @@ const Banner = () => {
       backgroundSize="cover"
       color="#fff"
     >
-      <Box display={["block", "block", "none"]} bg="#fff" mb="2rem">
-        <Box w="100%" mx="auto" display={"grid"} placeItems="center" h="3.5rem">
-          <Image src={logo} alt="logo" />
-        </Box>
-      </Box>
-
       <Box w="85%" mx="auto" mb="2">
         <SimpleGrid columns={[1, 1, 1, 2]} spacing={["1rem", "1rem", "4rem"]}>
           <Box>
@@ -39,16 +35,16 @@ const Banner = () => {
               h="100%"
               px="5"
             >
-              <Text fontSize=".875rem" fontWeight="500">
+              <Text fontSize=".875rem" fontWeight="500" mt='2'>
                 Connect with a Helpful Lender
               </Text>
               <Heading fontSize={["1.75rem", "1.75rem", "4rem"]} as="h1">
-                Get a Loan Today for a Better Tomorrow
+                Get Matched with Your Ideal Loan Lender in next 48 hrs{" "}
               </Heading>
             </VStack>
           </Box>
           <Box>
-            <MultiForm />
+            <SingleForm />
           </Box>
         </SimpleGrid>
       </Box>
