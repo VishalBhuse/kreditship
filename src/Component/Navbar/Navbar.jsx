@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Box>
+      <Box my='2'>
         <Flex
           w="90%"
           mx="auto"
@@ -130,17 +130,17 @@ const DesktopNav = () => {
       </HStack>
 
       <Button
-              color={"#1d36a0"}
-              bg={"white"}
-              _hover={{ bg: "white" }}
-              border={"1px solid blue"}
-              px={7}
-              py={6}
-              fontWeight={500}
-            >
-              Get Loan{" "}
-              <HiArrowNarrowRight style={{ marginLeft: "25px", color: "#1d36a0" }} />{" "}
-            </Button>
+        color={"#1d36a0"}
+        bg={"white"}
+        _hover={{ bg: "white" }}
+        border={"1px solid blue"}
+        px={7}
+        py={6}
+        fontWeight={500}
+      >
+        Get Loan{" "}
+        <HiArrowNarrowRight style={{ marginLeft: "25px", color: "#1d36a0" }} />{" "}
+      </Button>
     </HStack>
   );
 };
