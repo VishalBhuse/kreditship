@@ -25,7 +25,6 @@ const About = () => {
         mx="auto"
         mt="3"
         pb="10"
-        fontFamily={"Montserrat,Arial,sans-serif"}
         flexDirection={[
           "column-reverse",
           "column-reverse",
@@ -44,7 +43,7 @@ const About = () => {
           <Text
             color={"#555873"}
             fontWeight={"400"}
-            fontSize={" 19px"}
+            fontSize={"1rem"}
             lineHeight={1.2}
           >
             At Loanbridge Pro, we're committed to making it easier for borrowers
