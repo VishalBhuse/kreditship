@@ -45,7 +45,7 @@ const MyForm = () => {
         name: formValues.name,
         address: formValues.address,
         phoneNo: formValues.phoneNumber,
-        pinCode: formValues.pinCode,
+        pinCode: formValues.pincode,
       };
 
       axios

@@ -1,8 +1,6 @@
 import {
   Box,
   Button,
-  Hide,
-  Image,
   Input,
   Select,
   SimpleGrid,
@@ -14,7 +12,6 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 import React from "react";
-import logo from "../../Img/logo.svg";
 import { BsArrowRight } from "react-icons/bs";
 import { MdArrowDropDown } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -30,7 +27,6 @@ const Faq = () => {
         mx="auto"
         mt="3"
         pb="10"
-        fontFamily={"Montserrat,Arial,sans-serif"}
         flexDirection={[
           "column-reverse",
           "column-reverse",
@@ -43,14 +39,14 @@ const Faq = () => {
             color={"#2b335c"}
             fontWeight={"700"}
             fontSize={["2rem", "2rem", "2rem", "2rem", "4rem"]}
+            mt="2"
           >
             Frequently Asked Questions
           </Text>
           <Text
             color={"#555873"}
             fontWeight={"400"}
-            fontSize={" 19px"}
-            lineHeight={1.2}
+            fontSize={"1rem"}
             textAlign={"justify"}
           >
             ClearViewLoans.com provides a marketplace service where your loan
@@ -79,12 +75,12 @@ const Faq = () => {
                     <Box
                       as="span"
                       flex="1"
-                      color="#2b335c"
+                      color="#1d36a0"
+                      fontSize="1rem"
                       fontWeight={700}
-                      fontSize="1.25rem"
                       textAlign="left"
                     >
-                      1) What is a loan connecting service?
+                      1. What is a loan connecting service?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -92,8 +88,7 @@ const Faq = () => {
                 <AccordionPanel
                   color={"#555873"}
                   fontWeight={"400"}
-                  fontSize={" 19px"}
-                  lineHeight={1.2}
+                  fontSize={"0.9rem"}
                   textAlign={"justify"}
                   pb={4}
                 >
@@ -105,18 +100,18 @@ const Faq = () => {
                 </AccordionPanel>
               </AccordionItem>
 
-              <AccordionItem>
+              <AccordionItem mt="8px">
                 <h2>
                   <AccordionButton>
                     <Box
                       as="span"
                       flex="1"
-                      color="#2b335c"
+                      color="#1d36a0"
                       fontWeight={700}
-                      fontSize="1.25rem"
+                      fontSize="1rem"
                       textAlign="left"
                     >
-                      2) How does your loan connecting service work?
+                      2. How does your loan connecting service work?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -124,36 +119,33 @@ const Faq = () => {
                 <AccordionPanel
                   color={"#555873"}
                   fontWeight={"400"}
-                  fontSize={" 19px"}
-                  lineHeight={1.2}
+                  fontSize={"0.9rem"}
                   textAlign={"justify"}
                   pb={4}
                 >
                   Our loan connecting service works in four easy steps: <br />
-                  1) Fill out our online application form. <br />
                   <br />
-                  2) We'll match you with a lender who meets your needs.
+                  1. Fill out our online application form. <br />
+                  2. We'll match you with a lender who meets your needs.
                   <br />
-                  <br />
-                  3) Review your loan options and choose the one that works best
+                  3. Review your loan options and choose the one that works best
                   for you. <br />
-                  <br />
-                  4) Get the funds you need deposited directly into your bank
+                  4. Get the funds you need deposited directly into your bank
                   account.
                 </AccordionPanel>
               </AccordionItem>
-              <AccordionItem>
+              <AccordionItem mt="8px">
                 <h2>
                   <AccordionButton>
                     <Box
                       as="span"
                       flex="1"
-                      color="#2b335c"
+                      color="#1d36a0"
+                      fontSize="1rem"
                       fontWeight={700}
-                      fontSize="1.25rem"
                       textAlign="left"
                     >
-                      3) How long does it take to get a loan through your
+                      3. How long does it take to get a loan through your
                       service?
                     </Box>
                     <AccordionIcon />
@@ -162,8 +154,7 @@ const Faq = () => {
                 <AccordionPanel
                   color={"#555873"}
                   fontWeight={"400"}
-                  fontSize={" 19px"}
-                  lineHeight={1.2}
+                  fontSize={"0.9rem"}
                   textAlign={"justify"}
                   pb={4}
                 >
@@ -173,18 +164,18 @@ const Faq = () => {
                   application.
                 </AccordionPanel>
               </AccordionItem>
-              <AccordionItem>
+              <AccordionItem mt="8px">
                 <h2>
                   <AccordionButton>
                     <Box
                       as="span"
                       flex="1"
-                      color="#2b335c"
+                      color="#1d36a0"
+                      fontSize="1rem"
                       fontWeight={700}
-                      fontSize="1.25rem"
                       textAlign="left"
                     >
-                      4) Is your loan connecting service free to use?
+                      4. Is your loan connecting service free to use?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -192,8 +183,7 @@ const Faq = () => {
                 <AccordionPanel
                   color={"#555873"}
                   fontWeight={"400"}
-                  fontSize={" 19px"}
-                  lineHeight={1.2}
+                  fontSize={"0.9rem"}
                   textAlign={"justify"}
                   pb={4}
                 >
@@ -203,18 +193,18 @@ const Faq = () => {
                   cost to you.
                 </AccordionPanel>
               </AccordionItem>
-              <AccordionItem>
+              <AccordionItem mt="8px">
                 <h2>
                   <AccordionButton>
                     <Box
                       as="span"
                       flex="1"
-                      color="#2b335c"
+                      color="#1d36a0"
+                      fontSize="1rem"
                       fontWeight={700}
-                      fontSize="1.25rem"
                       textAlign="left"
                     >
-                      5) Will my credit score be affected if I apply for a loan
+                      5. Will my credit score be affected if I apply for a loan
                       through your service?
                     </Box>
                     <AccordionIcon />
@@ -223,8 +213,7 @@ const Faq = () => {
                 <AccordionPanel
                   color={"#555873"}
                   fontWeight={"400"}
-                  fontSize={" 19px"}
-                  lineHeight={1.2}
+                  fontSize={"0.9rem"}
                   textAlign={"justify"}
                   pb={4}
                 >
@@ -235,18 +224,18 @@ const Faq = () => {
                   be able to find a loan option that works for you.
                 </AccordionPanel>
               </AccordionItem>
-              <AccordionItem>
+              <AccordionItem mt="8px">
                 <h2>
                   <AccordionButton>
                     <Box
                       as="span"
                       flex="1"
-                      color="#2b335c"
+                      color="#1d36a0"
+                      fontSize="1rem"
                       fontWeight={700}
-                      fontSize="1.25rem"
                       textAlign="left"
                     >
-                      6) Are the lenders you work with trustworthy?
+                      6. Are the lenders you work with trustworthy?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -254,8 +243,7 @@ const Faq = () => {
                 <AccordionPanel
                   color={"#555873"}
                   fontWeight={"400"}
-                  fontSize={" 19px"}
-                  lineHeight={1.2}
+                  fontSize={"0.9rem"}
                   textAlign={"justify"}
                   pb={4}
                 >
@@ -265,18 +253,18 @@ const Faq = () => {
                   standards for customer service and financial stability.
                 </AccordionPanel>
               </AccordionItem>
-              <AccordionItem>
+              <AccordionItem mt="8px">
                 <h2>
                   <AccordionButton>
                     <Box
                       as="span"
                       flex="1"
-                      color="#2b335c"
+                      color="#1d36a0"
+                      fontSize="1rem"
                       fontWeight={700}
-                      fontSize="1.25rem"
                       textAlign="left"
                     >
-                      7) What if I have trouble repaying my loan?
+                      7. What if I have trouble repaying my loan?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -284,8 +272,7 @@ const Faq = () => {
                 <AccordionPanel
                   color={"#555873"}
                   fontWeight={"400"}
-                  fontSize={" 19px"}
-                  lineHeight={1.2}
+                  fontSize={"0.9rem"}
                   textAlign={"justify"}
                   pb={4}
                 >
@@ -296,18 +283,18 @@ const Faq = () => {
                   difficulty.
                 </AccordionPanel>
               </AccordionItem>
-              <AccordionItem>
+              <AccordionItem mt="8px">
                 <h2>
                   <AccordionButton>
                     <Box
                       as="span"
                       flex="1"
-                      color="#2b335c"
+                      color="#1d36a0"
+                      fontSize="1rem"
                       fontWeight={700}
-                      fontSize="1.25rem"
                       textAlign="left"
                     >
-                      8) Need a Loan? We Can Help!
+                      8. Need a Loan? We Can Help!
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -315,8 +302,7 @@ const Faq = () => {
                 <AccordionPanel
                   color={"#555873"}
                   fontWeight={"400"}
-                  fontSize={" 19px"}
-                  lineHeight={1.2}
+                  fontSize={"0.9rem"}
                   textAlign={"justify"}
                   pb={4}
                 >
@@ -325,18 +311,18 @@ const Faq = () => {
                   you find the right lender to meet their financial needs.
                 </AccordionPanel>
               </AccordionItem>
-              <AccordionItem>
+              <AccordionItem mt="8px">
                 <h2>
                   <AccordionButton>
                     <Box
                       as="span"
                       flex="1"
-                      color="#2b335c"
+                      color="#1d36a0"
+                      fontSize="1rem"
                       fontWeight={700}
-                      fontSize="1.25rem"
                       textAlign="left"
                     >
-                      9) Why Choose Us?
+                      9. Why Choose Us?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -344,8 +330,7 @@ const Faq = () => {
                 <AccordionPanel
                   color={"#555873"}
                   fontWeight={"400"}
-                  fontSize={" 19px"}
-                  lineHeight={1.2}
+                  fontSize={"0.9rem"}
                   textAlign={"justify"}
                   pb={4}
                 >
@@ -357,18 +342,18 @@ const Faq = () => {
                   use - there's no cost to apply or connect with a lender
                 </AccordionPanel>
               </AccordionItem>
-              <AccordionItem>
+              <AccordionItem mt="8px">
                 <h2>
                   <AccordionButton>
                     <Box
                       as="span"
                       flex="1"
-                      color="#2b335c"
+                      color="#1d36a0"
+                      fontSize="1rem"
                       fontWeight={700}
-                      fontSize="1.25rem"
                       textAlign="left"
                     >
-                      10) How It Works?
+                      10. How It Works?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -376,8 +361,7 @@ const Faq = () => {
                 <AccordionPanel
                   color={"#555873"}
                   fontWeight={"400"}
-                  fontSize={" 19px"}
-                  lineHeight={1.2}
+                  fontSize={"0.9rem"}
                   textAlign={"justify"}
                   pb={4}
                 >
