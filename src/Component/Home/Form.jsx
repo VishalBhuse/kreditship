@@ -57,20 +57,28 @@ const MyForm = () => {
             description: "Our Team Will Contact You Soon....",
             status: "success",
             duration: 3000,
+            position: "top",
             isClosable: true,
+          });
+          setFormValues({
+            name: "",
+            email: "",
+            address: "",
+            phoneNumber: "",
+            pincode: "",
           });
         })
         .catch((err) => {
           console.log(err);
+          toast({
+            title: "Form Not Submitted Successfully.",
+            description: "Something Went Wrong....",
+            status: "error",
+            duration: 3000,
+            position: "top",
+            isClosable: true,
+          });
         });
-
-      setFormValues({
-        name: "",
-        email: "",
-        address: "",
-        phoneNumber: "",
-        pincode: "",
-      });
     }
   };
 
