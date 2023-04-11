@@ -16,7 +16,6 @@ import React from "react";
 import logo from "../../Img/logo.svg";
 import { MdClose } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -24,7 +23,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Box my='2'>
+      <Box my="2">
         <Flex
           w="90%"
           mx="auto"
@@ -132,14 +131,15 @@ const DesktopNav = () => {
       <Button
         color={"#1d36a0"}
         bg={"white"}
-        _hover={{ bg: "white" }}
+        _hover={{ color: "#fff", bg: "#1d36a0" }}
         border={"1px solid blue"}
-        px={7}
-        py={6}
-        fontWeight={500}
+        py="6"
+        fontWeight={"600"}
       >
-        Get Loan{" "}
-        <HiArrowNarrowRight style={{ marginLeft: "25px", color: "#1d36a0" }} />{" "}
+        <HStack w="100%" justifyContent={"space-between"} spacing="10">
+          <Text>Get Loan</Text>
+          <Text>➜</Text>
+        </HStack>
       </Button>
     </HStack>
   );
@@ -150,7 +150,6 @@ const MobileNav = () => {
     <Stack p={4} display={{ md: "none" }}>
       <Box>
         <VStack fontWeight={"600"}>
-          <Link to={"/"}>Home</Link>
           <Link to={"/about"}>About Us</Link>
           <Link to={"/faq"}>FAQ's</Link>
         </VStack>

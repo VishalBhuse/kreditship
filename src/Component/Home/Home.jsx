@@ -120,7 +120,7 @@ const Home = () => {
         p="4"
         px={["2rem", "2rem", "5rem"]}
         bg="#e8e9ef"
-        display={["block", "block","block", "none"]}
+        display={["block", "block", "block", "none"]}
       >
         <VStack alignItems="flex-start">
           <Image
@@ -195,6 +195,9 @@ const Home = () => {
               borderRadius="4px"
               background="#1d36a0"
               cursor="pointer"
+              _hover={{
+                background: "#1d36a0",
+              }}
             >
               Get Started
               <Text fontSize={"1.5rem"}>&#8594;</Text>

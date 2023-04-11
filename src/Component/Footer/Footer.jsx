@@ -7,6 +7,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../Img/logo.svg";
 
 const Footer = () => {
@@ -146,7 +147,9 @@ const Footer = () => {
       <SimpleGrid columns={[1, 1, 1, 2]} spacing={5} w="85%" mx="auto" mt="10">
         <Box>
           <HStack justifyContent={["center", "center", "center", "flex-start"]}>
-            <Image src={logo} alt="logo" />
+            <Link to={"/"}>
+              <Image src={logo} alt="logo" />
+            </Link>
           </HStack>
         </Box>
         <Box textAlign={"center"}>
