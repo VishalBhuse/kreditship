@@ -1325,6 +1325,7 @@ export default function MultiForm() {
   return (
     <>
       <Box
+        bg="#fff"
         borderWidth="1px"
         rounded="lg"
         shadow="1px 1px 3px rgba(0,0,0,0.3)"

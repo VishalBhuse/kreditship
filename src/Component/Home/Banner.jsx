@@ -14,14 +14,22 @@ import MultiForm from "./MultiForm";
 
 const Banner = () => {
   return (
-    <Box w="100%" mx="auto">
-      <Box display={["block", "block", "none"]}>
-        <Box w="100%" mx="auto" display={"grid"} placeItems="center" h="3rem">
+    <Box
+      w="100%"
+      mx="auto"
+      bg="url('./img/banner.jpg')"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
+      backgroundSize="cover"
+      color="#fff"
+    >
+      <Box display={["block", "block", "none"]} bg="#fff" mb="2rem">
+        <Box w="100%" mx="auto" display={"grid"} placeItems="center" h="3.5rem">
           <Image src={logo} alt="logo" />
         </Box>
       </Box>
 
-      <Box w="85%" mx="auto" my="2">
+      <Box w="85%" mx="auto" mb="2">
         <SimpleGrid columns={[1, 1, 1, 2]} spacing={["1rem", "1rem", "4rem"]}>
           <Box>
             <VStack
