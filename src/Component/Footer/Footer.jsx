@@ -12,7 +12,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Footer = ({handleGetLoanClick}) => {
+const Footer = ({ handleGetLoanClick }) => {
   return (
     <>
       <SimpleGrid
@@ -38,28 +38,27 @@ const Footer = ({handleGetLoanClick}) => {
             <br />
             <br />
           </Text>
-            <UnorderedList>
-              <ListItem>
-                Fast and Easy Application Process: Our application process is
-                designed to be as quick and hassle-free as possible, so you can
-                get the funds you need without a lot of stress and paperwork.
-                Simply fill out our online application form, and we'll take care
-                of the rest.
-              </ListItem>
-              <ListItem>
-                Tailored Loan Solutions: We know that every borrower's situation
-                is different, which is why we work with a network of trusted
-                lenders to find loan options that meet your specific needs.
-                Whether you need a loan for unexpected expenses, debt
-                consolidation, or something else, we've got you covered.{" "}
-              </ListItem>
-              <ListItem>
-                Reliable and Trusted Lenders: We only work with lenders who have
-                a proven track record of reliability and trustworthiness, so you
-                can feel confident that you're getting a loan from a reputable
-                source.
-              </ListItem>
-            </UnorderedList>
+          <UnorderedList>
+            <ListItem>
+              Fast and Easy Application Process: Our application process is
+              designed to be as quick and hassle-free as possible, so you can
+              get the funds you need without a lot of stress and paperwork.
+              Simply fill out our online application form, and we'll take care
+              of the rest.
+            </ListItem>
+            <ListItem>
+              Tailored Loan Solutions: We know that every borrower's situation
+              is different, which is why we work with a network of trusted
+              lenders to find loan options that meet your specific needs.
+              Whether you need a loan for unexpected expenses, debt
+              consolidation, or something else, we've got you covered.{" "}
+            </ListItem>
+            <ListItem>
+              Reliable and Trusted Lenders: We only work with lenders who have a
+              proven track record of reliability and trustworthiness, so you can
+              feel confident that you're getting a loan from a reputable source.
+            </ListItem>
+          </UnorderedList>
         </Box>
         <Box>
           <Text color="#2b335c" fontWeight={"700"} fontSize="1.25rem">
@@ -76,30 +75,30 @@ const Footer = ({handleGetLoanClick}) => {
             <br />
             <br />
           </Text>
-            <UnorderedList>
-              <ListItem>
-                Fill Out the Online Application Form: Start by filling out our
-                online application form, which asks for basic information about
-                your financial situation and the loan you need.
-              </ListItem>
-              <ListItem>
-                Matched with a Lender: Once you've completed the application
-                form, we'll use our network of trusted lenders to find the best
-                options for you. We'll match you with a lender who meets your
-                needs and who is willing to provide you with a loan.
-              </ListItem>
-              <ListItem>
-                Review Your Loan Options: Once you've been matched with a
-                lender, we'll provide you with a list of loan options to choose
-                from. You can review the terms and conditions of each loan, and
-                choose the one that works best for you.
-              </ListItem>
-              <ListItem>
-                Get the Funds You Need: Once you've chosen your loan option,
-                your lender will deposit the funds directly into your bank
-                account. It's that easy!
-              </ListItem>
-            </UnorderedList>
+          <UnorderedList>
+            <ListItem>
+              Fill Out the Online Application Form: Start by filling out our
+              online application form, which asks for basic information about
+              your financial situation and the loan you need.
+            </ListItem>
+            <ListItem>
+              Matched with a Lender: Once you've completed the application form,
+              we'll use our network of trusted lenders to find the best options
+              for you. We'll match you with a lender who meets your needs and
+              who is willing to provide you with a loan.
+            </ListItem>
+            <ListItem>
+              Review Your Loan Options: Once you've been matched with a lender,
+              we'll provide you with a list of loan options to choose from. You
+              can review the terms and conditions of each loan, and choose the
+              one that works best for you.
+            </ListItem>
+            <ListItem>
+              Get the Funds You Need: Once you've chosen your loan option, your
+              lender will deposit the funds directly into your bank account.
+              It's that easy!
+            </ListItem>
+          </UnorderedList>
         </Box>
       </SimpleGrid>
 
@@ -160,7 +159,7 @@ const Footer = ({handleGetLoanClick}) => {
               }}
               onClick={handleGetLoanClick}
             >
-              Apply Now
+              <Text>Apply Now</Text>
               <Text fontSize={"1.5rem"}>&#8594;</Text>
             </Button>
           </Box>
