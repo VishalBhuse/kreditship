@@ -11,6 +11,7 @@ import {
 import { advantage } from "../../Data/Data";
 import Banner from "./Banner";
 import dottedpatterne from "../../Img/dottedpatterne.svg";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const Home = ({ inputRef, handleGetLoanClick }) => {
   return (
@@ -203,7 +204,9 @@ const Home = ({ inputRef, handleGetLoanClick }) => {
               onClick={handleGetLoanClick}
             >
               Get Started
-              <Text fontSize={"1.5rem"}>&#8594;</Text>
+              <Text fontSize={"1.5rem"}>
+                <MdOutlineArrowRightAlt />
+              </Text>
             </Button>
           </Box>
         </Box>

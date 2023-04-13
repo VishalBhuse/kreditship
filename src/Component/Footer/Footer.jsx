@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const Footer = ({ handleGetLoanClick }) => {
   return (
@@ -150,17 +151,20 @@ const Footer = ({ handleGetLoanClick }) => {
               fontSize="1rem"
               color="#fff"
               textAlign="center"
-              border="1px solid transparent"
               borderRadius="4px"
               background="#1d36a0"
               cursor="pointer"
               _hover={{
-                background: "#1d36a0",
+                background: "#fff",
+                color:"#1d36a0"
               }}
+              border="1px solid #1d36a0"
               onClick={handleGetLoanClick}
             >
               <Text>Apply Now</Text>
-              <Text fontSize={"1.5rem"}>&#8594;</Text>
+              <Text fontSize={"1.5rem"}>
+                <MdOutlineArrowRightAlt />
+              </Text>
             </Button>
           </Box>
         </Box>
@@ -185,7 +189,7 @@ const Footer = ({ handleGetLoanClick }) => {
 
         <Box textAlign={"center"}>
           <Text fontWeight={"500"} color="#555873" fontSize={"1rem"}>
-            Copyright © 2023 Loanbridge Pro. All Rights Reserved
+            Copyright © 2023 Loanbridge Pro. <br /> All Rights Reserved
           </Text>
         </Box>
       </SimpleGrid>

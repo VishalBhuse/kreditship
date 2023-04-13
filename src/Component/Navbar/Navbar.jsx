@@ -15,6 +15,7 @@ import React from "react";
 import { MdClose } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const Navbar = ({ handleGetLoanClick }) => {
   const { isOpen, onToggle } = useDisclosure();
@@ -59,7 +60,7 @@ const Navbar = ({ handleGetLoanClick }) => {
               w="100%"
               mx="auto"
             >
-              <DesktopNav handleGetLoanClick={handleGetLoanClick}/>
+              <DesktopNav handleGetLoanClick={handleGetLoanClick} />
             </Flex>
             <Stack
               flex={{ base: 1, md: 0 }}
@@ -93,7 +94,7 @@ const Navbar = ({ handleGetLoanClick }) => {
 
 export default Navbar;
 
-const DesktopNav = ({handleGetLoanClick}) => {
+const DesktopNav = ({ handleGetLoanClick }) => {
   return (
     <HStack
       w="100%"
@@ -146,7 +147,9 @@ const DesktopNav = ({handleGetLoanClick}) => {
       >
         <HStack w="100%" justifyContent={"space-between"} spacing="10">
           <Text>Get Loan</Text>
-          <Text>➜</Text>
+          <Text fontSize={"1.5rem"}>
+            <MdOutlineArrowRightAlt />
+          </Text>
         </HStack>
       </Button>
     </HStack>
