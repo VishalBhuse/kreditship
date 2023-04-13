@@ -29,14 +29,13 @@ const MyForm = ({ inputRef }) => {
     setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
   };
 
-  const handleEmailChange = (e) => { // Added separate handler for email input
+  const handleEmailChange = (e) => {
     const { name, value } = e.target;
     setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
-    setEmailFormatError(!validateEmail(value)); // Validate email format and set error state accordingly
+    setEmailFormatError(!validateEmail(value));
   };
 
   const validateEmail = (email) => {
-    // Email validation function
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
   };
@@ -123,9 +122,9 @@ const MyForm = ({ inputRef }) => {
               value={formValues.email}
               onChange={handleEmailChange}
             />
-              {emailFormatError && ( // Show email format error message
+            {emailFormatError && (
               <Box color="red" fontSize="14px">
-                Invalid email format.
+                Please enter a valid email address.
               </Box>
             )}
           </FormControl>

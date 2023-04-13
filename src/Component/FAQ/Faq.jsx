@@ -56,7 +56,7 @@ const Faq = ({ inputRef }) => {
       <Box w="85%" mx="auto" mt="2%">
         <Box mt={"3"}>
           <Accordion defaultIndex={[0]} allowMultiple>
-            <AccordionItem>
+            <AccordionItem border="none">
               <h2>
                 <AccordionButton>
                   <Box
@@ -87,7 +87,7 @@ const Faq = ({ inputRef }) => {
               </AccordionPanel>
             </AccordionItem>
 
-            <AccordionItem mt="8px">
+            <AccordionItem mt="8px"  border="none">
               <h2>
                 <AccordionButton>
                   <Box
