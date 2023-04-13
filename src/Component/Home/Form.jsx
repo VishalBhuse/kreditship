@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 
-const MyForm = () => {
+const MyForm = ({ inputRef }) => {
   const toast = useToast();
   const [formValues, setFormValues] = useState({
     name: "",
@@ -83,8 +83,13 @@ const MyForm = () => {
   };
 
   return (
-    <Box h="auto">
-      <Box rounded="lg" color="#242f65" boxShadow="lg" p={8}>
+    <Box
+      h="auto"
+      bg="#fff"
+      borderRadius={15}
+      boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
+    >
+      <Box rounded="lg" color="#242f65" p={8}>
         <Stack spacing={4}>
           <FormControl isRequired>
             <FormLabel>Name</FormLabel>
@@ -93,6 +98,7 @@ const MyForm = () => {
               name="name"
               value={formValues.name}
               onChange={handleChange}
+              ref={inputRef}
             />
           </FormControl>
           <FormControl isRequired>

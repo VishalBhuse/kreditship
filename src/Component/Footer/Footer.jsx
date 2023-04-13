@@ -1,41 +1,20 @@
 import {
   Box,
+  Button,
   Divider,
+  Heading,
   HStack,
-  Image,
+  ListItem,
   SimpleGrid,
   Text,
+  UnorderedList,
 } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../Img/logo.svg";
 
-const Footer = () => {
+const Footer = ({handleGetLoanClick}) => {
   return (
     <>
-      <Box bg="#e8e9ef" color="#555873" w="85%" mx="auto" borderRadius={"15px"}>
-        <Box
-          display="flex"
-          gap="2.5rem"
-          justifyContent={"space-around"}
-          flexWrap="wrap"
-          py="3rem"
-          px={["2rem", "2rem", "2rem", "4rem", "4rem"]}
-        >
-          <Text> How It Works</Text>
-          <Text>About Us</Text>
-          <Text>Why Choose Us</Text>
-          <Text>Questions</Text>
-          <Text>Definitions</Text>
-          <Text>Rates & Fees</Text>
-          <Text>Lending Policy</Text>
-          <Text>Privacy Policy</Text>
-          <Text>Terms of Use</Text>
-          <Text>Disclaimer</Text>
-          <Text>Contact</Text>
-          <Text>E-Consent</Text>
-        </Box>
-      </Box>
       <SimpleGrid
         columns={[1, 1, 1, 2]}
         spacing={5}
@@ -46,101 +25,147 @@ const Footer = () => {
       >
         <Box>
           <Text color="#2b335c" fontWeight={"700"} fontSize="1.25rem">
-            Important Disclosures. Please Read Carefully.
+            Why Choose Us?
           </Text>
         </Box>
         <Box textAlign={"justify"} color="#555873" fontSize={"15px"}>
           <Text>
-            Persons facing serious financial difficulties should consider other
-            alternatives or should seek out professional financial advice.{" "}
+            At our loan connecting service, we understand that every borrower is
+            unique, with their own specific financial needs and goals. That's
+            why we work with you to find the loan solution that's right for you,
+            no matter what your circumstances may be. Here are just a few
+            reasons why you should choose our service.
             <br />
             <br />
-            This website is not an offer to lend. ClearViewLoans.com is not a
-            lender or lending partner and does not make loan or credit
-            decisions. ClearViewLoans.com connects interested persons with a
-            lender or lending partner from its network of approved lenders and
-            lending partners. ClearViewLoans.com does not control and is not
-            responsible for the actions or inactions of any lender or lending
-            partner, is not an agent, representative or broker of any lender or
-            lending partner, and does not endorse any lender or lending partner.
-            ClearViewLoans.com receives compensation from its lenders and
-            lending partners, often based on a ping-tree model similar to Google
-            AdWords where the highest available bidder is connected to the
-            consumer. Regardless, ClearViewLoans.com’s service is always free to
-            you. In some cases, you may be given the option of obtaining a loan
-            from a tribal lender. Tribal lenders are subject to tribal and
-            certain federal laws while being immune from state law including
-            usury caps. If you are connected to a tribal lender, please
-            understand that the tribal lender’s rates and fees may be higher
-            than state-licensed lenders. Additionally, tribal lenders may
-            require you to agree to resolve any disputes in a tribal
-            jurisdiction. You are urged to read and understand the terms of any
-            loan offered by any lender, whether tribal or state-licensed, and to
-            reject any particular loan offer that you cannot afford to repay or
-            that includes terms that are not acceptable to you. <br />
-            <br />
-            This service is not available in all states. If you request to
-            connect with a lender or lending partner in a particular state where
-            such loans are prohibited, or in a location where ClearViewLoans.com
-            does not have an available lender or lending partner, you will not
-            be connected to a lender or lending partner. You are urged to read
-            and understand the terms of any loan offered by any lender or
-            lending partner, and to reject any particular loan offer that you
-            cannot afford to repay or that includes terms that are not
-            acceptable to you. <br />
-            <br />
-            By submitting your information via this website, you are authorizing
-            ClearViewLoans.com and its partners to do a credit check, which may
-            include verifying your social security number, driver license number
-            or other identification, and a review of your creditworthiness.
-            Credit checks are usually performed by one of the major credit
-            bureaus such as Experian, Equifax and TransUnion, but also may
-            include alternative credit bureaus such as Teletrack, DP Bureau or
-            others. You also authorize ClearViewLoans.com to share your
-            information and credit history with a network of approved lenders
-            and lending partners.
-            <br />
+            <UnorderedList>
+              <ListItem>
+                Fast and Easy Application Process: Our application process is
+                designed to be as quick and hassle-free as possible, so you can
+                get the funds you need without a lot of stress and paperwork.
+                Simply fill out our online application form, and we'll take care
+                of the rest.
+              </ListItem>
+              <ListItem>
+                Tailored Loan Solutions: We know that every borrower's situation
+                is different, which is why we work with a network of trusted
+                lenders to find loan options that meet your specific needs.
+                Whether you need a loan for unexpected expenses, debt
+                consolidation, or something else, we've got you covered.{" "}
+              </ListItem>
+              <ListItem>
+                Reliable and Trusted Lenders: We only work with lenders who have
+                a proven track record of reliability and trustworthiness, so you
+                can feel confident that you're getting a loan from a reputable
+                source.
+              </ListItem>
+            </UnorderedList>
           </Text>
         </Box>
         <Box>
           <Text color="#2b335c" fontWeight={"700"} fontSize="1.25rem">
-            Lender’s or Lending Partner’s Disclosure of Terms.
+            Ready to Get Started?
           </Text>
         </Box>
         <Box textAlign={"justify"} color="#555873" fontSize={"15px"}>
           <Text>
-            The lenders and lending partners you are connected to will provide
-            documents that contain all fees and rate information pertaining to
-            the loan being offered, including any potential fees for
-            late-payments and the rules under which you may be allowed (if
-            permitted by applicable law) to refinance, renew or rollover your
-            loan. Loan fees and interest rates are determined solely by the
-            lender or lending partner based on the lender’s or lending partner’s
-            internal policies, underwriting criteria and applicable law.
-            ClearViewLoans.com has no knowledge of or control over the loan
-            terms offered by a lender and lending partner. You are urged to read
-            and understand the terms of any loan offered by any lenders and
-            lending partners and to reject any particular loan offer that you
-            cannot afford to repay or that includes terms that are not
-            acceptable to you.
-          </Text>
-        </Box>
-        <Box>
-          <Text color="#2b335c" fontWeight={"700"} fontSize="1.25rem">
-            Late Payments Hurt Your Credit Score
-          </Text>
-        </Box>
-        <Box textAlign={"justify"} color="#555873" fontSize={"15px"}>
-          <Text>
-            Please be aware that missing a payment or making a late payment can
-            negatively impact your credit score. To protect yourself and your
-            credit history, make sure you only accept loan terms that you can
-            afford to repay. If you cannot make a payment on time, you should
-            contact your lenders and lending partners immediately and discuss
-            how to handle late payments.
+            If you're ready to get the loan you need, without all the stress and
+            hassle of traditional lenders, then our loan connecting service is
+            the right choice for you. Our simple online application form takes
+            just minutes to complete, and we'll match you with a lender who
+            meets your needs. Here's how the process works:
+            <br />
+            <br />
+            <UnorderedList>
+              <ListItem>
+                Fill Out the Online Application Form: Start by filling out our
+                online application form, which asks for basic information about
+                your financial situation and the loan you need.
+              </ListItem>
+              <ListItem>
+                Matched with a Lender: Once you've completed the application
+                form, we'll use our network of trusted lenders to find the best
+                options for you. We'll match you with a lender who meets your
+                needs and who is willing to provide you with a loan.
+              </ListItem>
+              <ListItem>
+                Review Your Loan Options: Once you've been matched with a
+                lender, we'll provide you with a list of loan options to choose
+                from. You can review the terms and conditions of each loan, and
+                choose the one that works best for you.
+              </ListItem>
+              <ListItem>
+                Get the Funds You Need: Once you've chosen your loan option,
+                your lender will deposit the funds directly into your bank
+                account. It's that easy!
+              </ListItem>
+            </UnorderedList>
           </Text>
         </Box>
       </SimpleGrid>
+
+      <Box w="85%" mx="auto" my="10">
+        <Box
+          w={["100%", "100%", "80%"]}
+          mx="auto"
+          textAlign={["left", "left", "center"]}
+        >
+          <Heading
+            color={"#2b335c"}
+            fontWeight="700"
+            textTransform={"capitalize"}
+            fontSize={["1.7rem", "3rem", "3rem"]}
+          >
+            Get a Loan Today for a Better Tomorrow
+          </Heading>
+        </Box>
+
+        <Box>
+          <Text
+            textAlign={["left", "left", "center"]}
+            m="12px auto 24px"
+            fontSize="1rem"
+            lineHeight=" 1.2"
+            color="#555873"
+            w={["100%", "100%", "70%"]}
+            mx="auto"
+            fontWeight="600"
+          >
+            Get a loan offer right away without a lot of hassle and I truly
+            appreciate the speedy service.{" "}
+          </Text>
+          <Box
+            w={["100%", "100%", "70%"]}
+            mx="auto"
+            display={"grid"}
+            placeItems="center"
+          >
+            <Button
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              padding="14px 24px"
+              minHeight="54px"
+              minWidth={["100%", "220px", "220px"]}
+              fontFamily="Montserrat,Arial,sans-serif"
+              fontWeight="700"
+              fontSize="1rem"
+              color="#fff"
+              textAlign="center"
+              border="1px solid transparent"
+              borderRadius="4px"
+              background="#1d36a0"
+              cursor="pointer"
+              _hover={{
+                background: "#1d36a0",
+              }}
+              onClick={handleGetLoanClick}
+            >
+              Apply Now
+              <Text fontSize={"1.5rem"}>&#8594;</Text>
+            </Button>
+          </Box>
+        </Box>
+      </Box>
 
       <Divider h="0.5px" bg="grey" />
 
@@ -148,13 +173,20 @@ const Footer = () => {
         <Box>
           <HStack justifyContent={["center", "center", "center", "flex-start"]}>
             <Link to={"/"}>
-              <Image src={logo} alt="logo" />
+              <Text
+                fontWeight="700"
+                color="#242f65"
+                fontSize={{ base: "15px", sm: "17px", md: "29px" }}
+              >
+                Loanbridge Pro
+              </Text>
             </Link>
           </HStack>
         </Box>
+
         <Box textAlign={"center"}>
           <Text fontWeight={"500"} color="#555873" fontSize={"1rem"}>
-            Copyright © 2023 ClearViewLoans.com. All Rights Reserved
+            Copyright © 2023 Loanbridge Pro. All Rights Reserved
           </Text>
         </Box>
       </SimpleGrid>

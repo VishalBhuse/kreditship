@@ -1,20 +1,8 @@
-import {
-  Box,
-  Button,
-  Heading,
-  HStack,
-  Image,
-  SimpleGrid,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import React from "react";
-import logo from "../../Img/logo.svg";
-import banner from "../../Img/banner.svg";
-import SingleForm from "./SingleForm";
+import MyForm from "./Form";
 
-const Banner = () => {
+const Banner = ({inputRef}) => {
   return (
     <Box
       w="100%"
@@ -35,7 +23,7 @@ const Banner = () => {
               h="100%"
               px="5"
             >
-              <Text fontSize=".875rem" fontWeight="500" mt='2'>
+              <Text fontSize=".875rem" fontWeight="500" mt="2">
                 Connect with a Helpful Lender
               </Text>
               <Heading fontSize={["1.75rem", "1.75rem", "4rem"]} as="h1">
@@ -43,8 +31,17 @@ const Banner = () => {
               </Heading>
             </VStack>
           </Box>
-          <Box>
-            <SingleForm />
+          <Box
+            bg="#fff"
+            borderWidth="1px"
+            rounded="lg"
+            shadow="1px 1px 3px rgba(0,0,0,0.3)"
+            maxWidth={800}
+            p={6}
+            m="10px auto"
+            as="form"
+          >
+            <MyForm inputRef={inputRef}/>
           </Box>
         </SimpleGrid>
       </Box>

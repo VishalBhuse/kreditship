@@ -1,38 +1,12 @@
-import {
-  Box,
-  Button,
-  Hide,
-  Image,
-  Input,
-  Select,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
+import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
-import logo from "../../Img/logo.svg";
-import { BsArrowRight } from "react-icons/bs";
-import { MdArrowDropDown } from "react-icons/md";
-import { Link } from "react-router-dom";
+import MyForm from "../Home/Form";
 
-const About = () => {
+const About = ({ inputRef }) => {
   return (
     <>
-      <SimpleGrid
-        display={"flex"}
-        justifyContent={"space-between"}
-        spacing={2}
-        w="80%"
-        mx="auto"
-        mt="3"
-        pb="10"
-        flexDirection={[
-          "column-reverse",
-          "column-reverse",
-          "column-reverse",
-          "row",
-        ]}
-      >
-        <Box w={["100%", "100%", "100%", "100%", "65%"]} textAlign={"justify"}>
+      <SimpleGrid columns={[1, 1, 2, 2]} spacing={10} w="85%" mx="auto" mt="2%">
+        <Box textAlign={"justify"}>
           <Text
             color={"#2b335c"}
             fontWeight={"700"}
@@ -71,79 +45,8 @@ const About = () => {
             need.
           </Text>
         </Box>
-        <Box
-          width={["100%", "70%", "50%", "50%", "30%"]}
-          mx={["auto", "auto", "auto", "0", "0"]}
-          borderRadius={15}
-          boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
-          py={7}
-          px={6}
-          height={"400px"}
-        >
-          <Text
-            textAlign={"center"}
-            color={"#2b335c"}
-            marginBottom={"24px"}
-            fontSize={"24px"}
-            fontWeight={600}
-          >
-            Start Your Speedy Form!
-          </Text>
-          <Box>
-            <Select
-              icon={<MdArrowDropDown />}
-              borderColor="#555873"
-              placeholder="Select Loan Option"
-              h={"54px"}
-              fontSize={["14px", "14px", "14px", "14px", "16px"]}
-              color={"#555873"}
-              borderRadius={"4px"}
-              _hover={{ color: "#555873" }}
-              focusBorderColor="black"
-            >
-              <option value="$1000">$1000</option>
-              <option value="$2000">$2000</option>
-              <option value="$3000">$3000</option>
-              <option value="$4000">$4000</option>
-              <option value="$5000">$5000</option>
-            </Select>
-          </Box>
-          <Box mt={3}>
-            <Input
-              type="email"
-              borderColor="#555873"
-              h={"54px"}
-              fontSize={["14px", "14px", "14px", "14px", "16px"]}
-              color={"#555873"}
-              borderRadius={"4px"}
-              _hover={{ color: "#555873" }}
-              focusBorderColor="black"
-              placeholder="Email"
-            />
-          </Box>
-          <Box mt={3}>
-            <Button
-              bg={"#1d36a0"}
-              w={"full"}
-              h={"54px"}
-              fontWeight="700"
-              fontSize="1rem"
-              color=" #fff"
-              textAlign="center"
-              _hover={{ bg: "#1d36a0" }}
-            >
-              Get Started{" "}
-              <BsArrowRight style={{ marginLeft: "25px", color: "#white" }} />
-            </Button>
-          </Box>
-          <Box mt={2}>
-            <Text color="#555873" fontSize={"12px"}>
-              By clicking [Get Started], you agree that this acts as your
-              digital signature, that you accept the{" "}
-              <Link style={{ color: "blue" }}>Terms of Use</Link>, and{" "}
-              <Link style={{ color: "blue" }}>Privacy Policy</Link>.
-            </Text>
-          </Box>
+        <Box px={[0, 0, 0, 5]}>
+          <MyForm inputRef={inputRef} />
         </Box>
       </SimpleGrid>
     </>

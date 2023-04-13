@@ -10,11 +10,12 @@ import {
 } from "@chakra-ui/react";
 import { advantage } from "../../Data/Data";
 import Banner from "./Banner";
+import dottedpatterne from "../../Img/dottedpatterne.svg";
 
-const Home = () => {
+const Home = ({ inputRef, handleGetLoanClick }) => {
   return (
     <>
-      <Banner />
+      <Banner inputRef={inputRef} />
 
       <Box w="85%" mx="auto" my="10">
         <Box>
@@ -71,8 +72,7 @@ const Home = () => {
             gridColumn: "1/2",
             gridRow: "1/-1",
             backgroundColor: "#e8e9ef",
-            backgroundImage:
-              "url('https://clearviewloans.com/images/dotted-patterne.svg')",
+            backgroundImage: `url(${dottedpatterne})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "top 6px right 770px",
             backgroundSize: "332px",
@@ -149,10 +149,10 @@ const Home = () => {
           <Heading
             color={"#2b335c"}
             fontWeight="700"
+            textTransform={"capitalize"}
             fontSize={["1.7rem", "3rem", "3rem"]}
           >
-            Get a Loan Today <br />
-            for a Better Tomorrow
+            Get Matched with Your Ideal Loan Lender in next 48 hrs
           </Heading>
         </Box>
 
@@ -166,12 +166,14 @@ const Home = () => {
             w={["100%", "100%", "70%"]}
             mx="auto"
           >
-            We commit to connecting you with an approved lender. We also made
-            the process simple. No need to visit hundreds of websites and fill
-            out numerous paperwork. We recognize a personal loan is a private
-            matter. Reasons for needing money range from critical automobile
-            maintenance, unexpected medical expenses, much needed family
-            vacation, basic home improvements, etc.
+            Are you struggling to find a loan that meets your needs? Look no
+            further than our loan connecting service! We specialize in helping
+            borrowers just like you connect with trusted lenders to find the
+            best loan options, tailored to your unique situation in the next
+            24-48 hrs.
+            <Text as="span" fontWeight={"700"}>
+              GUARANTEED!
+            </Text>
           </Text>
           <Box
             w={["100%", "100%", "70%"]}
@@ -198,6 +200,7 @@ const Home = () => {
               _hover={{
                 background: "#1d36a0",
               }}
+              onClick={handleGetLoanClick}
             >
               Get Started
               <Text fontSize={"1.5rem"}>&#8594;</Text>

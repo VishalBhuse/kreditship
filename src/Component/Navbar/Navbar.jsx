@@ -10,20 +10,18 @@ import {
   VStack,
   HStack,
   Button,
-  Image,
 } from "@chakra-ui/react";
 import React from "react";
-import logo from "../../Img/logo.svg";
 import { MdClose } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ handleGetLoanClick }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
     <>
-      <Box my="2">
+      <Box boxShadow=" rgba(0, 0, 0, 0.16) 0px 1px 4px" py="2">
         <Flex
           w="90%"
           mx="auto"
@@ -61,7 +59,7 @@ const Navbar = () => {
               w="100%"
               mx="auto"
             >
-              <DesktopNav />
+              <DesktopNav handleGetLoanClick={handleGetLoanClick}/>
             </Flex>
             <Stack
               flex={{ base: 1, md: 0 }}
@@ -73,7 +71,14 @@ const Navbar = () => {
               mr="10px"
             >
               <Link to="/">
-                <Image src={logo} alt="logo" />
+                <Text
+                  // fontSize={"1.5rem"}
+                  fontWeight="700"
+                  display={["block", "block", "none"]}
+                  fontSize={{ base: "15px", sm: "17px", md: "29px" }}
+                >
+                  Loanbridge Pro
+                </Text>
               </Link>
             </Stack>
           </Flex>
@@ -88,7 +93,7 @@ const Navbar = () => {
 
 export default Navbar;
 
-const DesktopNav = () => {
+const DesktopNav = ({handleGetLoanClick}) => {
   return (
     <HStack
       w="100%"
@@ -97,7 +102,9 @@ const DesktopNav = () => {
       justifyContent="space-between"
     >
       <Link to={"/"}>
-        <Image src={logo} alt="logo" />
+        <Text fontSize={"1.5rem"} fontWeight="700">
+          Loanbridge Pro
+        </Text>
       </Link>
       <HStack
         w="20%"
@@ -135,6 +142,7 @@ const DesktopNav = () => {
         border={"1px solid blue"}
         py="6"
         fontWeight={"600"}
+        onClick={handleGetLoanClick}
       >
         <HStack w="100%" justifyContent={"space-between"} spacing="10">
           <Text>Get Loan</Text>
