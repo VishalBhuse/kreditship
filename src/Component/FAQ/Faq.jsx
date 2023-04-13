@@ -56,7 +56,7 @@ const Faq = ({ inputRef }) => {
       <Box w="85%" mx="auto" mt="2%">
         <Box mt={"3"}>
           <Accordion defaultIndex={[0]} allowMultiple>
-            <AccordionItem border="none">
+            <AccordionItem outline={'none'} border="none">
               <h2>
                 <AccordionButton>
                   <Box
@@ -87,7 +87,7 @@ const Faq = ({ inputRef }) => {
               </AccordionPanel>
             </AccordionItem>
 
-            <AccordionItem mt="8px"  border="none">
+            <AccordionItem outline={'none'} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -121,7 +121,7 @@ const Faq = ({ inputRef }) => {
                 account.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem mt="8px">
+            <AccordionItem outline={'none'} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -150,7 +150,7 @@ const Faq = ({ inputRef }) => {
                 application.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem mt="8px">
+            <AccordionItem outline={'none'} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -179,7 +179,7 @@ const Faq = ({ inputRef }) => {
                 to you.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem mt="8px">
+            <AccordionItem outline={'none'} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -210,7 +210,7 @@ const Faq = ({ inputRef }) => {
                 able to find a loan option that works for you.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem mt="8px">
+            <AccordionItem outline={'none'} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -239,7 +239,7 @@ const Faq = ({ inputRef }) => {
                 customer service and financial stability.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem mt="8px">
+            <AccordionItem outline={'none'} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -268,7 +268,7 @@ const Faq = ({ inputRef }) => {
                 help borrowers who are experiencing financial difficulty.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem mt="8px">
+            <AccordionItem outline={'none'} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -296,7 +296,7 @@ const Faq = ({ inputRef }) => {
                 you find the right lender to meet their financial needs.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem mt="8px">
+            <AccordionItem outline={'none'} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -327,7 +327,7 @@ const Faq = ({ inputRef }) => {
                 there's no cost to apply or connect with a lender
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem mt="8px">
+            <AccordionItem outline={'none'} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
