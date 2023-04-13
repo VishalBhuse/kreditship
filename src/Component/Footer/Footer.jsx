@@ -37,6 +37,7 @@ const Footer = ({handleGetLoanClick}) => {
             reasons why you should choose our service.
             <br />
             <br />
+          </Text>
             <UnorderedList>
               <ListItem>
                 Fast and Easy Application Process: Our application process is
@@ -59,7 +60,6 @@ const Footer = ({handleGetLoanClick}) => {
                 source.
               </ListItem>
             </UnorderedList>
-          </Text>
         </Box>
         <Box>
           <Text color="#2b335c" fontWeight={"700"} fontSize="1.25rem">
@@ -75,6 +75,7 @@ const Footer = ({handleGetLoanClick}) => {
             meets your needs. Here's how the process works:
             <br />
             <br />
+          </Text>
             <UnorderedList>
               <ListItem>
                 Fill Out the Online Application Form: Start by filling out our
@@ -99,7 +100,6 @@ const Footer = ({handleGetLoanClick}) => {
                 account. It's that easy!
               </ListItem>
             </UnorderedList>
-          </Text>
         </Box>
       </SimpleGrid>
 

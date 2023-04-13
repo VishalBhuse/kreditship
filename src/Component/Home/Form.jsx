@@ -22,10 +22,23 @@ const MyForm = ({ inputRef }) => {
     pincode: "",
   });
   const [showEmptyFieldsMessage, setShowEmptyFieldsMessage] = useState(false);
+  const [emailFormatError, setEmailFormatError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
+  };
+
+  const handleEmailChange = (e) => { // Added separate handler for email input
+    const { name, value } = e.target;
+    setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
+    setEmailFormatError(!validateEmail(value)); // Validate email format and set error state accordingly
+  };
+
+  const validateEmail = (email) => {
+    // Email validation function
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
   };
 
   const handleSubmit = () => {
@@ -34,7 +47,8 @@ const MyForm = ({ inputRef }) => {
       formValues.email === "" ||
       formValues.address === "" ||
       formValues.phoneNumber === "" ||
-      formValues.pincode === ""
+      formValues.pincode === "" ||
+      emailFormatError
     ) {
       setShowEmptyFieldsMessage(true);
     } else {
@@ -107,8 +121,13 @@ const MyForm = ({ inputRef }) => {
               type="email"
               name="email"
               value={formValues.email}
-              onChange={handleChange}
+              onChange={handleEmailChange}
             />
+              {emailFormatError && ( // Show email format error message
+              <Box color="red" fontSize="14px">
+                Invalid email format.
+              </Box>
+            )}
           </FormControl>
           <FormControl>
             <FormLabel>Address</FormLabel>
