@@ -151,14 +151,13 @@ const Footer = ({ handleGetLoanClick }) => {
               fontSize="1rem"
               color="#fff"
               textAlign="center"
+              border="1px solid transparent"
               borderRadius="4px"
               background="#1d36a0"
               cursor="pointer"
               _hover={{
-                background: "#fff",
-                color:"#1d36a0"
+                background: "#1d36a0",
               }}
-              border="1px solid #1d36a0"
               onClick={handleGetLoanClick}
             >
               <Text>Apply Now</Text>
