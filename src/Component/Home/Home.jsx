@@ -187,7 +187,7 @@ const Home = ({ inputRef, handleGetLoanClick }) => {
               justifyContent="space-between"
               padding="14px 24px"
               minHeight="54px"
-              minWidth={["100%", "220px", "220px"]}
+              minWidth={["0%", "220px", "220px"]}
               fontFamily="Montserrat,Arial,sans-serif"
               fontWeight="700"
               fontSize="1rem"
