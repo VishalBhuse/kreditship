@@ -128,7 +128,7 @@ const MyForm = ({ inputRef }) => {
               </Box>
             )}
           </FormControl>
-          <FormControl>
+          <FormControl isRequired>
             <FormLabel>Address</FormLabel>
             <Input
               type="text"
