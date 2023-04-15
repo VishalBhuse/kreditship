@@ -1,8 +1,9 @@
 import { Box, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import React from "react";
-import MyForm from "./Form";
+// import MyForm from "./Form";
+import MultiForm from "./MultiForm";
 
-const Banner = ({inputRef}) => {
+const Banner = ({ inputRef }) => {
   return (
     <Box
       w="100%"
@@ -12,6 +13,7 @@ const Banner = ({inputRef}) => {
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
       color="#fff"
+      h="100%"
     >
       <Box w="85%" mx="auto" mb="2">
         <SimpleGrid columns={[1, 1, 1, 2]} spacing={["1rem", "1rem", "4rem"]}>
@@ -36,12 +38,13 @@ const Banner = ({inputRef}) => {
             borderWidth="1px"
             rounded="lg"
             shadow="1px 1px 3px rgba(0,0,0,0.3)"
-            maxWidth={800}
-            p={6}
+            p={5}
+            w="100%"
             m="10px auto"
-            as="form"
+            h="500px"
           >
-            <MyForm inputRef={inputRef}/>
+            {/* <MyForm inputRef={inputRef}/> */}
+            <MultiForm />
           </Box>
         </SimpleGrid>
       </Box>

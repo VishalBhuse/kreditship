@@ -16,11 +16,12 @@ import {
 } from "@chakra-ui/react";
 
 import { useToast } from "@chakra-ui/react";
+import axios from "axios";
 
 const Form1 = ({ step, setStep, progress, setProgress, rup, setrup }) => {
   return (
     <Box
-      h="350px"
+      h="80%"
       // h={["55vh", "auto", "auto", "auto", "100%"]}
     >
       <Heading
@@ -58,11 +59,7 @@ const Form1 = ({ step, setStep, progress, setProgress, rup, setrup }) => {
             onClick={() => {
               setrup(10000);
               setStep(step + 1);
-              if (step === 3) {
-                setProgress(100);
-              } else {
-                setProgress(progress + 33.33);
-              }
+              setProgress(progress + 100 / 18);
             }}
           >
             Rs.1000
@@ -89,11 +86,7 @@ const Form1 = ({ step, setStep, progress, setProgress, rup, setrup }) => {
             onClick={() => {
               setrup(20000);
               setStep(step + 1);
-              if (step === 3) {
-                setProgress(100);
-              } else {
-                setProgress(progress + 33.33);
-              }
+              setProgress(progress + 100 / 18);
             }}
           >
             Rs.20000
@@ -120,11 +113,7 @@ const Form1 = ({ step, setStep, progress, setProgress, rup, setrup }) => {
             onClick={() => {
               setrup(30000);
               setStep(step + 1);
-              if (step === 3) {
-                setProgress(100);
-              } else {
-                setProgress(progress + 33.33);
-              }
+              setProgress(progress + 100 / 18);
             }}
           >
             Rs.30000
@@ -151,11 +140,7 @@ const Form1 = ({ step, setStep, progress, setProgress, rup, setrup }) => {
             onClick={() => {
               setrup(40000);
               setStep(step + 1);
-              if (step === 3) {
-                setProgress(100);
-              } else {
-                setProgress(progress + 33.33);
-              }
+              setProgress(progress + 100 / 18);
             }}
           >
             Rs.40000
@@ -182,11 +167,7 @@ const Form1 = ({ step, setStep, progress, setProgress, rup, setrup }) => {
             onClick={() => {
               setrup(50000);
               setStep(step + 1);
-              if (step === 3) {
-                setProgress(100);
-              } else {
-                setProgress(progress + 33.33);
-              }
+              setProgress(progress + 100 / 18);
             }}
           >
             Rs.50000
@@ -197,9 +178,24 @@ const Form1 = ({ step, setStep, progress, setProgress, rup, setrup }) => {
   );
 };
 
-const Form2 = () => {
+const Form2 = ({
+  creditScore,
+  setcreditScore,
+  creditScoreError,
+  setCreditScoreError,
+}) => {
+  const handleCreditScoreChange = (e) => {
+    const value = e.target.value;
+    setcreditScore(value);
+    if (!value) {
+      setCreditScoreError("Credit score is required");
+    } else {
+      setCreditScoreError("");
+    }
+  };
+
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -213,24 +209,42 @@ const Form2 = () => {
 
       <FormControl mt="10" as={GridItem} colSpan={[6, 3, null, 2]}>
         <Input
-          type="text"
+          type="number"
           fontSize="20px"
           placeholder={"Enter Your Credit Score"}
           name="score"
           shadow="sm"
           size="sm"
           w="full"
+          value={creditScore}
           py="1.5rem"
           rounded="md"
+          onChange={handleCreditScoreChange}
+          // onChange={(e) => setcreditScore(e.target.value)}
         />
+        {creditScoreError && (
+          <Text color="red.500" mt={2}>
+            {creditScoreError}
+          </Text>
+        )}
       </FormControl>
     </Box>
   );
 };
 
-const Form3 = () => {
+const Form3 = ({ email, setemail, EmailError, setEmailError }) => {
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setemail(value);
+    if (!value) {
+      setEmailError("Credit score is required");
+    } else {
+      setEmailError("");
+    }
+  };
+
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -244,8 +258,8 @@ const Form3 = () => {
 
       <FormControl mt="10" as={GridItem} colSpan={[6, 3, null, 2]}>
         <Input
-          type="text"
-          placeholder={"Email"}
+          type="email"
+          placeholder={"Enter Your Email Address"}
           name="email"
           shadow="sm"
           size="sm"
@@ -253,15 +267,50 @@ const Form3 = () => {
           py="1.5rem"
           rounded="md"
           fontSize="20px"
+          value={email}
+          onChange={handleEmailChange}
+          // onChange={(e) => setemail(e.target.value)}
         />
+        {EmailError && (
+          <Text color="red.500" mt={2}>
+            {EmailError}
+          </Text>
+        )}
       </FormControl>
     </Box>
   );
 };
 
-const Form4 = () => {
+const Form4 = ({
+  FirstName,
+  LastName,
+  setLastName,
+  setFirstName,
+  FirstNameError,
+  LastNameError,
+  setFirstNameError,
+  setLastNameError,
+}) => {
+  const handleFirstName = (e) => {
+    const value = e.target.value;
+    setFirstName(value);
+    if (!value) {
+      setFirstNameError("First Name is required");
+    } else {
+      setFirstNameError("");
+    }
+  };
+  const handleLastName = (e) => {
+    const value = e.target.value;
+    setLastName(value);
+    if (!value) {
+      setLastNameError("Last Name is required");
+    } else {
+      setLastNameError("");
+    }
+  };
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -288,7 +337,15 @@ const Form4 = () => {
           py="1.5rem"
           rounded="md"
           fontSize="20px"
+          value={FirstName}
+          onChange={handleFirstName}
+          // onChange={(e) => setFirstName(e.target.value)}
         />
+        {FirstNameError && (
+          <Text color="red.500" mt={2}>
+            {FirstNameError}
+          </Text>
+        )}
       </FormControl>
 
       <FormControl mt="10" as={GridItem} colSpan={[6, 3, null, 2]}>
@@ -301,16 +358,39 @@ const Form4 = () => {
           w="full"
           py="1.5rem"
           rounded="md"
+          value={LastName}
           fontSize="20px"
+          onChange={handleLastName}
+          // onChange={(e) => setLastName(e.target.value)}
         />
+        {LastNameError && (
+          <Text color="red.500" mt={2}>
+            {LastNameError}
+          </Text>
+        )}
       </FormControl>
     </Box>
   );
 };
 
-const Form5 = () => {
+const Form5 = ({
+  setphoneNumber,
+  phoneNumber,
+  phoneNumberError,
+  setphoneNumberError,
+}) => {
+  const handlePhoneNumber = (e) => {
+    const value = e.target.value;
+    setphoneNumber(value);
+    if (!value) {
+      setphoneNumberError("Phone Number is required");
+    } else {
+      setphoneNumberError("");
+    }
+  };
+
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -338,15 +418,51 @@ const Form5 = () => {
           py="1.5rem"
           rounded="md"
           fontSize="20px"
+          value={phoneNumber}
+          onChange={handlePhoneNumber}
+          // onChange={(e) => setphoneNumber(e.target.value)}
         />
+        {phoneNumberError && (
+          <Text color="red.500" mt={2}>
+            {phoneNumberError}
+          </Text>
+        )}
       </FormControl>
     </Box>
   );
 };
 
-const Form6 = () => {
+const Form6 = ({
+  setaddress,
+  zipCode,
+  setzipCode,
+  address,
+  zipCodeError,
+  setzipCodeError,
+  addressError,
+  setaddressError,
+}) => {
+  const handleZipCode = (e) => {
+    const value = e.target.value;
+    setzipCode(value);
+    if (!value) {
+      setzipCodeError("Zip Code is required");
+    } else {
+      setzipCodeError("");
+    }
+  };
+  const handleAddress = (e) => {
+    const value = e.target.value;
+    setaddress(value);
+    if (!value) {
+      setaddressError("Address is required");
+    } else {
+      setaddressError("");
+    }
+  };
+
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -360,7 +476,7 @@ const Form6 = () => {
 
       <FormControl mt="10" as={GridItem} colSpan={[6, 3, null, 2]}>
         <Input
-          type="number"
+          type="text"
           placeholder={"Zip Code"}
           name="zipCode"
           shadow="sm"
@@ -369,12 +485,20 @@ const Form6 = () => {
           py="1.5rem"
           rounded="md"
           fontSize="20px"
+          value={zipCode}
+          onChange={handleZipCode}
+          // onChange={(e) => setzipCode(e.target.value)}
         />
+        {zipCodeError && (
+          <Text color="red.500" mt={2}>
+            {zipCodeError}
+          </Text>
+        )}
       </FormControl>
 
       <FormControl mt="10" as={GridItem} colSpan={[6, 3, null, 2]}>
         <Input
-          type="number"
+          type="text"
           placeholder={"Address"}
           name="address"
           shadow="sm"
@@ -383,15 +507,23 @@ const Form6 = () => {
           py="1.5rem"
           rounded="md"
           fontSize="20px"
+          value={address}
+          onChange={handleAddress}
+          // onChange={(e) => setaddress(e.target.value)}
         />
+        {addressError && (
+          <Text color="red.500" mt={2}>
+            {addressError}
+          </Text>
+        )}
       </FormControl>
     </Box>
   );
 };
 
-const Form7 = ({ setowner }) => {
+const Form7 = ({ setowner, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -424,7 +556,11 @@ const Form7 = ({ setowner }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setowner("Yes")}
+            onClick={() => {
+              setowner("Yes");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Yes
           </Button>
@@ -447,7 +583,11 @@ const Form7 = ({ setowner }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setowner("No")}
+            onClick={() => {
+              setowner("No");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             No
           </Button>
@@ -457,9 +597,9 @@ const Form7 = ({ setowner }) => {
   );
 };
 
-const Form8 = ({ setcar }) => {
+const Form8 = ({ setcar, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -492,7 +632,11 @@ const Form8 = ({ setcar }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setcar("Yes")}
+            onClick={() => {
+              setcar("Yes");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Yes
           </Button>
@@ -515,7 +659,11 @@ const Form8 = ({ setcar }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setcar("No")}
+            onClick={() => {
+              setcar("No");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             No
           </Button>
@@ -525,9 +673,9 @@ const Form8 = ({ setcar }) => {
   );
 };
 
-const Form9 = ({ setmilitary }) => {
+const Form9 = ({ setmilitary, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -561,7 +709,11 @@ const Form9 = ({ setmilitary }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setmilitary("Yes")}
+            onClick={() => {
+              setmilitary("Yes");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Yes
           </Button>
@@ -584,7 +736,11 @@ const Form9 = ({ setmilitary }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setmilitary("No")}
+            onClick={() => {
+              setmilitary("No");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             No
           </Button>
@@ -594,9 +750,18 @@ const Form9 = ({ setmilitary }) => {
   );
 };
 
-const Form10 = () => {
+const Form10 = ({ setdob, dobError, setdobError, dob }) => {
+  const handledob = (e) => {
+    const value = e.target.value;
+    setdob(value);
+    if (!value) {
+      setdobError("Date OF Birth is required");
+    } else {
+      setdobError("");
+    }
+  };
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -615,7 +780,7 @@ const Form10 = () => {
 
       <FormControl mt="10" as={GridItem} colSpan={[6, 3, null, 2]}>
         <Input
-          type="text"
+          type="date"
           placeholder={"Date of Birth"}
           name="dob"
           shadow="sm"
@@ -624,15 +789,23 @@ const Form10 = () => {
           py="1.5rem"
           rounded="md"
           fontSize="20px"
+          value={dob}
+          onChange={handledob}
+          // onChange={(e) => setdob(e.target.value)}
         />
+        {dobError && (
+          <Text color="red.500" mt={2}>
+            {dobError}
+          </Text>
+        )}
       </FormControl>
     </Box>
   );
 };
 
-const Form11 = ({ setdebtoffers }) => {
+const Form11 = ({ setdebtoffers, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -665,7 +838,11 @@ const Form11 = ({ setdebtoffers }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setdebtoffers("Yes")}
+            onClick={() => {
+              setdebtoffers("Yes");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Yes
           </Button>
@@ -688,7 +865,11 @@ const Form11 = ({ setdebtoffers }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setdebtoffers("No")}
+            onClick={() => {
+              setdebtoffers("No");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             No
           </Button>
@@ -698,9 +879,18 @@ const Form11 = ({ setdebtoffers }) => {
   );
 };
 
-const Form12 = () => {
+const Form12 = ({ setadharNo, adharNo, adharNoError, setadharNoError }) => {
+  const handleadhar = (e) => {
+    const value = e.target.value;
+    setadharNo(value);
+    if (!value) {
+      setadharNoError("Adhar No is required");
+    } else {
+      setadharNoError("");
+    }
+  };
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -714,7 +904,7 @@ const Form12 = () => {
 
       <FormControl mt="10" as={GridItem} colSpan={[6, 3, null, 2]}>
         <Input
-          type="text"
+          type="Number"
           placeholder={"Adhar Card Number"}
           name="adhar"
           shadow="sm"
@@ -723,15 +913,23 @@ const Form12 = () => {
           py="1.5rem"
           rounded="md"
           fontSize="20px"
+          value={adharNo}
+          onChange={handleadhar}
+          // onChange={(e) => setadharNo(e.target.value)}
         />
+        {adharNoError && (
+          <Text color="red.500" mt={2}>
+            {adharNoError}
+          </Text>
+        )}
       </FormControl>
     </Box>
   );
 };
 
-const Form13 = ({ setincome }) => {
+const Form13 = ({ setincome, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -764,7 +962,11 @@ const Form13 = ({ setincome }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setincome("Employment")}
+            onClick={() => {
+              setincome("Employment");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Employment
           </Button>
@@ -787,7 +989,11 @@ const Form13 = ({ setincome }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setincome("Benifits")}
+            onClick={() => {
+              setincome("Benifits");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Benifits
           </Button>
@@ -797,9 +1003,9 @@ const Form13 = ({ setincome }) => {
   );
 };
 
-const Form14 = ({ setdebtoffers }) => {
+const Form14 = ({ setmonthIncome, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -815,7 +1021,7 @@ const Form14 = ({ setdebtoffers }) => {
         Select your total income before taxes and include all sources of income.
       </Text>
 
-      <FormControl mt="5%">
+      <FormControl mt="2%">
         <VStack spacing={"3"} h="100%">
           <Button
             w="100%"
@@ -836,17 +1042,22 @@ const Form14 = ({ setdebtoffers }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
+            onClick={() => {
+              setmonthIncome("10000");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
             // onClick={() => {
             //   setrup(10000);
             //   setStep(step + 1);
             //   if (step === 3) {
             //     setProgress(100);
             //   } else {
-            //     setProgress(progress + 33.33);
+            //     setProgress(progress + 5);
             //   }
             // }}
           >
-            Rs.1000
+            Rs.10000
           </Button>
           <Button
             w="100%"
@@ -867,13 +1078,19 @@ const Form14 = ({ setdebtoffers }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
+            onClick={() => {
+              setmonthIncome("20000");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
+
             // onClick={() => {
             //   setrup(20000);
             //   setStep(step + 1);
             //   if (step === 3) {
             //     setProgress(100);
             //   } else {
-            //     setProgress(progress + 33.33);
+            //     setProgress(progress + 5);
             //   }
             // }}
           >
@@ -898,13 +1115,19 @@ const Form14 = ({ setdebtoffers }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
+            onClick={() => {
+              setmonthIncome("30000");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
+
             // onClick={() => {
             //   setrup(30000);
             //   setStep(step + 1);
             //   if (step === 3) {
             //     setProgress(100);
             //   } else {
-            //     setProgress(progress + 33.33);
+            //     setProgress(progress + 5);
             //   }
             // }}
           >
@@ -935,9 +1158,14 @@ const Form14 = ({ setdebtoffers }) => {
             //   if (step === 3) {
             //     setProgress(100);
             //   } else {
-            //     setProgress(progress + 33.33);
+            //     setProgress(progress + 5);
             //   }
             // }}
+            onClick={() => {
+              setmonthIncome("40000");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Rs.40000
           </Button>
@@ -966,9 +1194,14 @@ const Form14 = ({ setdebtoffers }) => {
             //   if (step === 3) {
             //     setProgress(100);
             //   } else {
-            //     setProgress(progress + 33.33);
+            //     setProgress(progress + 5);
             //   }
             // }}
+            onClick={() => {
+              setmonthIncome("50000");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Rs.50000
           </Button>
@@ -978,9 +1211,23 @@ const Form14 = ({ setdebtoffers }) => {
   );
 };
 
-const Form15 = () => {
+const Form15 = ({
+  setincomeSource,
+  incomeSource,
+  incomeSourceError,
+  setincomeSourceError,
+}) => {
+  const handleincomeSource = (e) => {
+    const value = e.target.value;
+    setincomeSource(value);
+    if (!value) {
+      setincomeSourceError("Employer Information is required");
+    } else {
+      setincomeSourceError("");
+    }
+  };
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1008,15 +1255,23 @@ const Form15 = () => {
           py="1.5rem"
           rounded="md"
           fontSize="20px"
+          value={incomeSource}
+          onChange={handleincomeSource}
+          // onChange={(e) => setincomeSource(e.target.value)}
         />
+        {incomeSourceError && (
+          <Text color="red.500" mt={2}>
+            {incomeSourceError}
+          </Text>
+        )}
       </FormControl>
     </Box>
   );
 };
 
-const Form16 = ({ setpaycheck }) => {
+const Form16 = ({ setpaycheck, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1049,7 +1304,11 @@ const Form16 = ({ setpaycheck }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setpaycheck("electronic")}
+            onClick={() => {
+              setpaycheck("Electronic Deposit");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Electronic Deposit
           </Button>
@@ -1072,7 +1331,11 @@ const Form16 = ({ setpaycheck }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setpaycheck("paper")}
+            onClick={() => {
+              setpaycheck("Paper Check");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Paper Check
           </Button>
@@ -1082,9 +1345,9 @@ const Form16 = ({ setpaycheck }) => {
   );
 };
 
-const Form17 = ({ setpaid }) => {
+const Form17 = ({ setpaid, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1092,8 +1355,9 @@ const Form17 = ({ setpaid }) => {
         fontWeight="600"
         mb="2%"
         color="#242f65"
+        textTransform={"capitalize"}
       >
-        How Is Your Paycheck Received?
+        How Often are you paid?
       </Heading>
 
       <FormControl mt="5%">
@@ -1117,7 +1381,11 @@ const Form17 = ({ setpaid }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setpaid("every 2 weeks")}
+            onClick={() => {
+              setpaid("Every 2 Weeks");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Every 2 Weeks
           </Button>
@@ -1140,7 +1408,11 @@ const Form17 = ({ setpaid }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setpaid("twice a month")}
+            onClick={() => {
+              setpaid("Twice a Month");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Twice a month
           </Button>
@@ -1163,7 +1435,11 @@ const Form17 = ({ setpaid }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setpaid("monthly")}
+            onClick={() => {
+              setpaid("Monthly");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Monthly
           </Button>
@@ -1186,7 +1462,11 @@ const Form17 = ({ setpaid }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setpaid("weekly")}
+            onClick={() => {
+              setpaid("Weekly");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Weekly
           </Button>
@@ -1196,9 +1476,9 @@ const Form17 = ({ setpaid }) => {
   );
 };
 
-const Form18 = ({ setaccount }) => {
+const Form18 = ({ setaccount, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1231,7 +1511,11 @@ const Form18 = ({ setaccount }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setaccount("checking")}
+            onClick={() => {
+              setaccount("checking");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Checking
           </Button>
@@ -1254,7 +1538,11 @@ const Form18 = ({ setaccount }) => {
               fontFamily: "jsf-icomoon",
               fontSize: "16px",
             }}
-            onClick={() => setaccount("saving")}
+            onClick={() => {
+              setaccount("saving");
+              setStep(step + 1);
+              setProgress(progress + 100 / 18);
+            }}
           >
             Savings
           </Button>
@@ -1264,9 +1552,18 @@ const Form18 = ({ setaccount }) => {
   );
 };
 
-const Form19 = () => {
+const Form19 = ({ setdeposite, deposite, depositeError, setdepositeError }) => {
+  const handledepositeDetails = (e) => {
+    const value = e.target.value;
+    setdeposite(value);
+    if (!value) {
+      setdepositeError("Employer Information is required");
+    } else {
+      setdepositeError("");
+    }
+  };
   return (
-    <Box h="350px">
+    <Box h="80%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1294,7 +1591,15 @@ const Form19 = () => {
           py="1.5rem"
           rounded="md"
           fontSize="20px"
+          value={deposite}
+          onChange={handledepositeDetails}
+          // onChange={(e) => setdeposite(e.target.value)}
         />
+        {depositeError && (
+          <Text color="red.500" mt={2}>
+            {depositeError}
+          </Text>
+        )}
       </FormControl>
     </Box>
   );
@@ -1303,33 +1608,150 @@ const Form19 = () => {
 export default function MultiForm() {
   const toast = useToast();
   const [step, setStep] = useState(1);
-  const [progress, setProgress] = useState(33.33);
+  const [progress, setProgress] = useState(0);
   const [rup, setrup] = useState(0);
+  const [creditScore, setcreditScore] = useState("");
+  const [email, setemail] = useState("");
+  const [FirstName, setFirstName] = useState("");
+  const [LastName, setLastName] = useState("");
+  const [phoneNumber, setphoneNumber] = useState("");
+  const [zipCode, setzipCode] = useState("");
+  const [address, setaddress] = useState("");
   const [owner, setowner] = useState("");
   const [car, setcar] = useState("");
   const [military, setmilitary] = useState("");
+  const [dob, setdob] = useState("");
   const [debtoffers, setdebtoffers] = useState("");
+  const [adharNo, setadharNo] = useState("");
   const [income, setincome] = useState("");
+  const [monthIncome, setmonthIncome] = useState("");
+  const [incomeSource, setincomeSource] = useState("");
   const [paycheck, setpaycheck] = useState("");
   const [paid, setpaid] = useState("");
   const [account, setaccount] = useState("");
-  console.log(owner);
+  const [deposite, setdeposite] = useState("");
+
+  // console.log(rup, "rup");
+  // console.log(creditScore, "creditScore");
+  // console.log(email, "email");
+  // console.log(FirstName, "FirstName");
+  // console.log(LastName, "LastName");
+  // console.log(phoneNumber, "phoneNumber");
+  // console.log(zipCode, "zipCode");
+  // console.log(address, "address");
+  // console.log(owner, "owner");
+  // console.log(car, "car");
+  // console.log(military, "military");
+  // console.log(dob, "dob");
+  // console.log(debtoffers, "debtoffers");
+  // console.log(adharNo, "adharNo");
+  // console.log(income, "income");
+  // console.log(monthIncome, "monthIncome");
+  // console.log(incomeSource, "incomeSource");
+  // console.log(paycheck, "paycheck");
+  // console.log(paid, "paid");
+  // console.log(account, "account");
+  // console.log(deposite, "deposite");
+
+  const [creditScoreError, setCreditScoreError] = useState("");
+  const [EmailError, setEmailError] = useState("");
+  const [FirstNameError, setFirstNameError] = useState("");
+  const [LastNameError, setLastNameError] = useState("");
+  const [phoneNumberError, setphoneNumberError] = useState("");
+  const [zipCodeError, setzipCodeError] = useState("");
+  const [addressError, setaddressError] = useState("");
+  const [dobError, setdobError] = useState("");
+  const [adharNoError, setadharNoError] = useState("");
+  const [incomeSourceError, setincomeSourceError] = useState("");
+  const [depositeError, setdepositeError] = useState("");
+
+  const handleSubmit = async () => {
+    if (step === 19 && !deposite) {
+      setdepositeError("Account Number is required");
+    } else {
+      const payload = {
+        rup: rup,
+        creditScore: creditScore,
+        email: email,
+        FirstName: FirstName,
+        LastName: LastName,
+        phoneNumber: phoneNumber,
+        zipCode: zipCode,
+        address: address,
+        owner: owner,
+        car: car,
+        military: military,
+        dob: dob,
+        debtoffers: debtoffers,
+        adharNo: adharNo,
+        income: income,
+        monthIncome: monthIncome,
+        incomeSource: incomeSource,
+        paycheck: paycheck,
+        paid: paid,
+        account: account,
+        deposite: deposite,
+      };
+
+      await axios
+        .post(`https://loanbridge-backend.vercel.app/email/getmail`, payload)
+        .then((r) => {
+          //   console.log(r.data);
+          toast({
+            title: "Form Submitted Successfully.",
+            description: "Our Team Will Contact You Soon....",
+            status: "success",
+            duration: 3000,
+            position: "top",
+            isClosable: true,
+          });
+          setrup(0);
+          setcreditScore("");
+          setemail("");
+          setFirstName("");
+          setLastName("");
+          setphoneNumber("");
+          setzipCode("");
+          setaddress("");
+          setowner("");
+          setcar("");
+          setmilitary("");
+          setdob("");
+          setdebtoffers("");
+          setadharNo("");
+          setincome("");
+          setmonthIncome("");
+          setincomeSource("");
+          setpaycheck("");
+          setpaid("");
+          setaccount("");
+          setdeposite("");
+        })
+        .catch((err) => {
+          console.log(err);
+          toast({
+            title: "Form Not Submitted Successfully.",
+            description: "Something Went Wrong....",
+            status: "error",
+            duration: 3000,
+            position: "top",
+            isClosable: true,
+          });
+        });
+    }
+  };
+
   return (
     <>
-      <Box
-        bg="#fff"
-        borderWidth="1px"
-        rounded="lg"
-        shadow="1px 1px 3px rgba(0,0,0,0.3)"
-        maxWidth={800}
-        p={6}
-        m="10px auto"
-        as="form"
-      >
-        <Progress size="sm" value={progress} mb="5%" colorScheme="green">
-          <ProgressLabel color="red" fontSize={"12px"}>
-            {progress}
-          </ProgressLabel>
+      <Box mx="auto" w="100%" as="form" color="#242f65" h="100%">
+        <Progress
+          hasStripe
+          size="sm"
+          value={progress}
+          mb="5%"
+          colorScheme="green"
+        >
+          <ProgressLabel color="red" fontSize={"12px"}></ProgressLabel>
         </Progress>
 
         {step === 1 ? (
@@ -1342,49 +1764,160 @@ export default function MultiForm() {
             setrup={setrup}
           />
         ) : step === 2 ? (
-          <Form2 />
+          <Form2
+            creditScore={creditScore}
+            setcreditScore={setcreditScore}
+            creditScoreError={creditScoreError}
+            setCreditScoreError={setCreditScoreError}
+          />
         ) : step === 3 ? (
-          <Form3 />
+          <Form3
+            email={email}
+            setemail={setemail}
+            EmailError={EmailError}
+            setEmailError={setEmailError}
+          />
         ) : step === 4 ? (
-          <Form4 />
+          <Form4
+            FirstName={FirstName}
+            setFirstName={setFirstName}
+            LastName={LastName}
+            setLastName={setLastName}
+            FirstNameError={FirstNameError}
+            setFirstNameError={setFirstNameError}
+            LastNameError={LastNameError}
+            setLastNameError={setLastNameError}
+          />
         ) : step === 5 ? (
-          <Form5 />
+          <Form5
+            phoneNumber={phoneNumber}
+            setphoneNumber={setphoneNumber}
+            phoneNumberError={phoneNumberError}
+            setphoneNumberError={setphoneNumberError}
+          />
         ) : step === 6 ? (
-          <Form6 />
+          <Form6
+            setzipCode={setzipCode}
+            setaddress={setaddress}
+            zipCode={zipCode}
+            address={address}
+            zipCodeError={zipCodeError}
+            setzipCodeError={setzipCodeError}
+            addressError={addressError}
+            setaddressError={setaddressError}
+          />
         ) : step === 7 ? (
-          <Form7 setowner={setowner} />
+          <Form7
+            setowner={setowner}
+            setStep={setStep}
+            step={step}
+            setProgress={setProgress}
+            progress={progress}
+          />
         ) : step === 8 ? (
-          <Form8 setcar={setcar} />
+          <Form8
+            setcar={setcar}
+            setStep={setStep}
+            step={step}
+            setProgress={setProgress}
+            progress={progress}
+          />
         ) : step === 9 ? (
-          <Form9 setmilitary={setmilitary} />
+          <Form9
+            setmilitary={setmilitary}
+            setStep={setStep}
+            step={step}
+            setProgress={setProgress}
+            progress={progress}
+          />
         ) : step === 10 ? (
-          <Form10 />
+          <Form10
+            setdob={setdob}
+            dobError={dobError}
+            setdobError={setdobError}
+            dob={dob}
+          />
         ) : step === 11 ? (
-          <Form11 setdebtoffers={setdebtoffers} />
+          <Form11
+            setdebtoffers={setdebtoffers}
+            setStep={setStep}
+            step={step}
+            setProgress={setProgress}
+            progress={progress}
+          />
         ) : step === 12 ? (
-          <Form12 />
+          <Form12
+            adharNo={adharNo}
+            setadharNo={setadharNo}
+            adharNoError={adharNoError}
+            setadharNoError={setadharNoError}
+          />
         ) : step === 13 ? (
-          <Form13 setincome={setincome} />
+          <Form13
+            setincome={setincome}
+            setStep={setStep}
+            step={step}
+            setProgress={setProgress}
+            progress={progress}
+          />
         ) : step === 14 ? (
-          <Form14 />
+          <Form14
+            setmonthIncome={setmonthIncome}
+            setStep={setStep}
+            step={step}
+            setProgress={setProgress}
+            progress={progress}
+          />
         ) : step === 15 ? (
-          <Form15 />
+          <Form15
+            setincomeSource={setincomeSource}
+            incomeSource={incomeSource}
+            incomeSourceError={incomeSourceError}
+            setincomeSourceError={setincomeSourceError}
+          />
         ) : step === 16 ? (
-          <Form16 />
+          <Form16
+            setpaycheck={setpaycheck}
+            setStep={setStep}
+            step={step}
+            setProgress={setProgress}
+            progress={progress}
+          />
         ) : step === 17 ? (
-          <Form17 setpaid={setpaid} />
-        ) : step === 17 ? (
-          <Form18 />
+          <Form17
+            setpaid={setpaid}
+            setStep={setStep}
+            step={step}
+            setProgress={setProgress}
+            progress={progress}
+          />
+        ) : step === 18 ? (
+          <Form18
+            setaccount={setaccount}
+            setStep={setStep}
+            step={step}
+            setProgress={setProgress}
+            progress={progress}
+          />
         ) : (
-          <Form19 />
+          <Form19
+            setdeposite={setdeposite}
+            deposite={deposite}
+            depositeError={depositeError}
+            setdepositeError={setdepositeError}
+          />
         )}
-        <ButtonGroup mt="10%" w="100%">
+
+<br />
+
+        <ButtonGroup  w="100%">
           <Flex w="100%" justifyContent="center">
             <HStack>
               <Button
                 onClick={() => {
                   setStep(step - 1);
-                  setProgress(progress - 33.33);
+                  setProgress(progress - 5);
+                  setProgress(progress - 100 / 18);
                 }}
                 // display={step === 1 || step === 3 ? "none" : "inline-flex"}
                 display={step === 1 ? "none" : "inline-flex"}
@@ -1405,13 +1938,159 @@ export default function MultiForm() {
                 Back
               </Button>
               <Button
-                display={step === 18 ? "none" : "inline-flex"}
+                display={
+                  step === 1 ||
+                  step === 7 ||
+                  step === 8 ||
+                  step === 9 ||
+                  step === 11 ||
+                  step === 13 ||
+                  step === 14 ||
+                  step === 16 ||
+                  step === 17 ||
+                  step === 18 ||
+                  step === 19
+                    ? "none"
+                    : "inline-flex"
+                }
+                // onClick={() => {
+                //   if (step === 2 && !creditScore) {
+                //     setCreditScoreError("Credit score is requireds");
+                //   } else if (step === 3 && !email) {
+                //     setEmailError("Email is requireds");
+                //   } else if (step === 4 && (!FirstName || !LastName)) {
+                //     if (!FirstName) {
+                //       setFirstNameError("First Name is required");
+                //     } else {
+                //       setFirstNameError("");
+                //     }
+                //     if (!LastName) {
+                //       setLastNameError("Last Name is required");
+                //     } else {
+                //       setLastNameError("");
+                //     }
+                //   } else if (step === 5 && !phoneNumber) {
+                //     setphoneNumberError("Phone Number is requireds");
+                //   } else if (step === 6 && (!zipCode || !address)) {
+                //     if (!zipCode) {
+                //       setzipCodeError("Zip Code is required");
+                //     } else {
+                //       setzipCodeError("");
+                //     }
+                //     if (!address) {
+                //       setaddressError("Address is required");
+                //     } else {
+                //       setaddressError("");
+                //     }
+                //   } else if (step === 10 && !dob) {
+                //     setdobError("Date OF Birth is requireds");
+                //   } else if (step === 12 && !adharNo) {
+                //     setadharNoError("Adhar No is required");
+                //   } else if (step === 15 && !incomeSource) {
+                //     setincomeSourceError("Employer Information is required");
+                //   }
+                //   // else if (step === 19 && !deposite) {
+                //   //   setdepositeError("Account Number is required");
+                //   // }
+                //   else {
+                //     setStep(step + 1);
+                //     // if (step === 6) {
+                //     //   setProgress(100);
+                //     // } else {
+                //     // }
+                //     setProgress(progress + 5);
+                //   }
+                // }}
                 onClick={() => {
-                  setStep(step + 1);
-                  if (step === 6) {
-                    setProgress(100);
-                  } else {
-                    setProgress(progress + 33.33);
+                  switch (step) {
+                    case 2:
+                      if (!creditScore) {
+                        setCreditScoreError("Credit score is required");
+                      } else {
+                        setStep(step + 1);
+                        setProgress(progress + 100 / 18);
+                      }
+                      break;
+                    case 3:
+                      if (!email) {
+                        setEmailError("Email is required");
+                      } else {
+                        setStep(step + 1);
+                        setProgress(progress + 100 / 18);
+                      }
+                      break;
+                    case 4:
+                      if (!FirstName || !LastName) {
+                        if (!FirstName) {
+                          setFirstNameError("First Name is required");
+                        } else {
+                          setFirstNameError("");
+                        }
+                        if (!LastName) {
+                          setLastNameError("Last Name is required");
+                        } else {
+                          setLastNameError("");
+                        }
+                      } else {
+                        setStep(step + 1);
+                        setProgress(progress + 100 / 18);
+                      }
+                      break;
+                    case 5:
+                      if (!phoneNumber) {
+                        setphoneNumberError("Phone Number is required");
+                      } else {
+                        setStep(step + 1);
+                        setProgress(progress + 100 / 18);
+                      }
+                      break;
+                    case 6:
+                      if (!zipCode || !address) {
+                        if (!zipCode) {
+                          setzipCodeError("Zip Code is required");
+                        } else {
+                          setzipCodeError("");
+                        }
+                        if (!address) {
+                          setaddressError("Address is required");
+                        } else {
+                          setaddressError("");
+                        }
+                      } else {
+                        setStep(step + 1);
+                        setProgress(progress + 100 / 18);
+                      }
+                      break;
+                    case 10:
+                      if (!dob) {
+                        setdobError("Date OF Birth is required");
+                      } else {
+                        setStep(step + 1);
+                        setProgress(progress + 100 / 18);
+                      }
+                      break;
+                    case 12:
+                      if (!adharNo) {
+                        setadharNoError("Adhar No is required");
+                      } else {
+                        setStep(step + 1);
+                        setProgress(progress + 100 / 18);
+                      }
+                      break;
+                    case 15:
+                      if (!incomeSource) {
+                        setincomeSourceError(
+                          "Employer Information is required"
+                        );
+                      } else {
+                        setStep(step + 1);
+                        setProgress(progress + 100 / 18);
+                      }
+                      break;
+                    default:
+                      setStep(step + 1);
+                      setProgress(progress + 100 / 18);
+                      break;
                   }
                 }}
                 fontWeight={"600"}
@@ -1430,7 +2109,7 @@ export default function MultiForm() {
               >
                 Continue
               </Button>
-              {step === 18 ? (
+              {step === 19 ? (
                 <Button
                   px="2rem"
                   py="1.5rem"
@@ -1442,15 +2121,7 @@ export default function MultiForm() {
                   borderRadius="54px"
                   colorScheme="red"
                   variant="solid"
-                  onClick={() => {
-                    toast({
-                      title: "Account created.",
-                      description: "We've created your account for you.",
-                      status: "success",
-                      duration: 3000,
-                      isClosable: true,
-                    });
-                  }}
+                  onClick={handleSubmit}
                 >
                   Submit
                 </Button>
