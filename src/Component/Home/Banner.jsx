@@ -41,7 +41,7 @@ const Banner = ({ myDivRef }) => {
             p={5}
             w="100%"
             m="10px auto"
-            h="500px"
+            h="530px"
           >
             {/* <MyForm inputRef={inputRef}/> */}
             <MultiForm myDivRef={myDivRef}/>
