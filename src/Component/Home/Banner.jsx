@@ -3,7 +3,7 @@ import React from "react";
 // import MyForm from "./Form";
 import MultiForm from "./MultiForm";
 
-const Banner = ({ inputRef }) => {
+const Banner = ({ myDivRef }) => {
   return (
     <Box
       w="100%"
@@ -44,7 +44,7 @@ const Banner = ({ inputRef }) => {
             h="500px"
           >
             {/* <MyForm inputRef={inputRef}/> */}
-            <MultiForm />
+            <MultiForm myDivRef={myDivRef}/>
           </Box>
         </SimpleGrid>
       </Box>

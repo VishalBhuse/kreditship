@@ -7,10 +7,10 @@ import Home from "./Component/Home/Home";
 import Navbar from "./Component/Navbar/Navbar";
 
 function App() {
-  const inputRef = useRef();
-
+  const myDivRef = useRef(null);
   const handleGetLoanClick = () => {
-    inputRef.current.focus();
+    // inputRef.current.focus();
+    myDivRef.current.scrollIntoView({ behavior: "smooth" });
   };
   return (
     <>
@@ -19,11 +19,11 @@ function App() {
         <Route
           path="/"
           element={
-            <Home inputRef={inputRef} handleGetLoanClick={handleGetLoanClick} />
+            <Home myDivRef={myDivRef} handleGetLoanClick={handleGetLoanClick} />
           }
         />
-        <Route path="/about" element={<About inputRef={inputRef} />} />
-        <Route path="/faq" element={<Faq inputRef={inputRef} />} />
+        <Route path="/about" element={<About myDivRef={myDivRef} />} />
+        <Route path="/faq" element={<Faq myDivRef={myDivRef} />} />
       </Routes>
       <Footer handleGetLoanClick={handleGetLoanClick} />
     </>

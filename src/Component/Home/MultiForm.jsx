@@ -1605,7 +1605,7 @@ const Form19 = ({ setdeposite, deposite, depositeError, setdepositeError }) => {
   );
 };
 
-export default function MultiForm() {
+export default function MultiForm({ myDivRef }) {
   const toast = useToast();
   const [step, setStep] = useState(1);
   const [progress, setProgress] = useState(0);
@@ -1743,7 +1743,7 @@ export default function MultiForm() {
 
   return (
     <>
-      <Box mx="auto" w="100%" as="form" color="#242f65" h="100%">
+      <Box mx="auto" w="100%" as="form" color="#242f65" h="100%" ref={myDivRef}>
         <Progress
           hasStripe
           size="sm"
@@ -1908,9 +1908,9 @@ export default function MultiForm() {
           />
         )}
 
-<br />
+        <br />
 
-        <ButtonGroup  w="100%">
+        <ButtonGroup w="100%">
           <Flex w="100%" justifyContent="center">
             <HStack>
               <Button

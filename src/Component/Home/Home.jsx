@@ -13,10 +13,10 @@ import Banner from "./Banner";
 import dottedpatterne from "../../Img/dottedpatterne.svg";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 
-const Home = ({ inputRef, handleGetLoanClick }) => {
+const Home = ({ myDivRef, handleGetLoanClick }) => {
   return (
     <>
-      <Banner inputRef={inputRef} />
+      <Banner myDivRef={myDivRef} />
 
       <Box w="85%" mx="auto" my="10">
         <Box>

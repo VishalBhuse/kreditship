@@ -9,9 +9,10 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 import React from "react";
-import MyForm from "../Home/Form";
+// import MyForm from "../Home/Form";
+import MultiForm from "../Home/MultiForm";
 
-const Faq = ({ inputRef }) => {
+const Faq = ({ myDivRef }) => {
   return (
     <>
       <SimpleGrid columns={[1, 1, 2, 2]} spacing={10} w="85%" mx="auto" mt="2%">
@@ -49,14 +50,23 @@ const Faq = ({ inputRef }) => {
             contact your lender or lending partner directly.
           </Text>
         </Box>
-        <Box px={[0, 0, 0, 5]}>
-          <MyForm inputRef={inputRef} />
+        <Box
+          bg="#fff"
+          borderWidth="1px"
+          rounded="lg"
+          boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
+          p={5}
+          w="100%"
+          m="10px auto"
+          h="500px"
+        >
+          <MultiForm myDivRef={myDivRef} />
         </Box>
       </SimpleGrid>
       <Box w="85%" mx="auto" mt="2%">
         <Box mt={"3"}>
           <Accordion defaultIndex={[0]} allowMultiple>
-            <AccordionItem outline={'none'} border="none">
+            <AccordionItem outline={"none"} border="none">
               <h2>
                 <AccordionButton>
                   <Box
@@ -87,7 +97,7 @@ const Faq = ({ inputRef }) => {
               </AccordionPanel>
             </AccordionItem>
 
-            <AccordionItem outline={'none'} border="none" mt="8px">
+            <AccordionItem outline={"none"} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -121,7 +131,7 @@ const Faq = ({ inputRef }) => {
                 account.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem outline={'none'} border="none" mt="8px">
+            <AccordionItem outline={"none"} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -150,7 +160,7 @@ const Faq = ({ inputRef }) => {
                 application.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem outline={'none'} border="none" mt="8px">
+            <AccordionItem outline={"none"} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -179,7 +189,7 @@ const Faq = ({ inputRef }) => {
                 to you.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem outline={'none'} border="none" mt="8px">
+            <AccordionItem outline={"none"} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -210,7 +220,7 @@ const Faq = ({ inputRef }) => {
                 able to find a loan option that works for you.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem outline={'none'} border="none" mt="8px">
+            <AccordionItem outline={"none"} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -239,7 +249,7 @@ const Faq = ({ inputRef }) => {
                 customer service and financial stability.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem outline={'none'} border="none" mt="8px">
+            <AccordionItem outline={"none"} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -268,7 +278,7 @@ const Faq = ({ inputRef }) => {
                 help borrowers who are experiencing financial difficulty.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem outline={'none'} border="none" mt="8px">
+            <AccordionItem outline={"none"} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -296,7 +306,7 @@ const Faq = ({ inputRef }) => {
                 you find the right lender to meet their financial needs.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem outline={'none'} border="none" mt="8px">
+            <AccordionItem outline={"none"} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
@@ -327,7 +337,7 @@ const Faq = ({ inputRef }) => {
                 there's no cost to apply or connect with a lender
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem outline={'none'} border="none" mt="8px">
+            <AccordionItem outline={"none"} border="none" mt="8px">
               <h2>
                 <AccordionButton>
                   <Box
