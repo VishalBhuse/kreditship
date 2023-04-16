@@ -17,6 +17,7 @@ import {
 
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
+import { MAINURL } from "../../Data/BackendURL";
 
 const Form1 = ({ step, setStep, progress, setProgress, setrup }) => {
   return (
@@ -258,7 +259,7 @@ const Form3 = ({
 
   const handleVerication = async () => {
     await axios
-      .post(`https://loanbridge-backend.vercel.app/email/getmailuser`, {
+      .post(MAINURL+`/email/getmailuser`, {
         email: email,
       })
       .then((r) => {
@@ -1813,7 +1814,7 @@ export default function MultiForm({ myDivRef }) {
       };
 
       await axios
-        .post(`https://loanbridge-backend.vercel.app/email/getmail`, payload)
+        .post(MAINURL+`/email/getmail`, payload)
         .then((r) => {
           toast({
             title: "Form Submitted Successfully.",
