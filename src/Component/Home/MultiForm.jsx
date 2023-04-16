@@ -62,7 +62,7 @@ const Form1 = ({ step, setStep, progress, setProgress, setrup }) => {
               setProgress(progress + 100 / 18);
             }}
           >
-            Rs.1000
+            Rs.10000
           </Button>
           <Button
             w="100%"
