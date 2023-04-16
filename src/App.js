@@ -5,7 +5,6 @@ import Faq from "./Component/FAQ/Faq";
 import Footer from "./Component/Footer/Footer";
 import Home from "./Component/Home/Home";
 import Navbar from "./Component/Navbar/Navbar";
-import MessengerCustomerChat from "react-messenger-customer-chat";
 
 function App() {
   const myDivRef = useRef(null);
@@ -27,11 +26,6 @@ function App() {
         <Route path="/faq" element={<Faq myDivRef={myDivRef} />} />
       </Routes>
       <Footer handleGetLoanClick={handleGetLoanClick} />
-
-      <MessengerCustomerChat
-        pageId="100091637392424"
-        appId="241863775003690"
-      />
     </>
   );
 }
