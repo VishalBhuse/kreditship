@@ -104,7 +104,7 @@ const DesktopNav = ({ handleGetLoanClick }) => {
     >
       <Link to={"/"}>
         <Text fontSize={"1.5rem"} fontWeight="700">
-          Loanbridge Pro
+          Loanbridge Pros
         </Text>
       </Link>
       <HStack
