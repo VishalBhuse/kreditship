@@ -1,6 +1,5 @@
 import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
-// import MyForm from "../Home/Form";
 import MultiForm from "../Home/MultiForm";
 
 const About = ({ myDivRef }) => {
@@ -58,9 +57,6 @@ const About = ({ myDivRef }) => {
         >
           <MultiForm myDivRef={myDivRef} />
         </Box>
-        {/* <Box px={[0, 0, 0, 5]}>
-          <MyForm inputRef={inputRef} />
-        </Box> */}
       </SimpleGrid>
     </>
   );

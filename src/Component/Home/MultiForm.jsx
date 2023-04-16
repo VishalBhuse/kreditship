@@ -18,7 +18,7 @@ import {
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 
-const Form1 = ({ step, setStep, progress, setProgress, rup, setrup }) => {
+const Form1 = ({ step, setStep, progress, setProgress, setrup }) => {
   return (
     <Box
       h="80%"
@@ -232,14 +232,79 @@ const Form2 = ({
   );
 };
 
-const Form3 = ({ email, setemail, EmailError, setEmailError }) => {
+const Form3 = ({
+  email,
+  setemail,
+  EmailError,
+  setEmailError,
+  setIsEmailVerified,
+}) => {
+  const toast = useToast();
+  const [code, setcode] = useState("");
+  const [verificationSent, setVerificationSent] = useState(false);
+
   const handleEmailChange = (e) => {
     const value = e.target.value;
     setemail(value);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!value) {
-      setEmailError("Credit score is required");
+      setEmailError("Email is required");
+    } else if (!emailRegex.test(value)) {
+      setEmailError("Please enter a valid email address");
     } else {
       setEmailError("");
+    }
+  };
+
+  const handleVerication = async () => {
+    await axios
+      .post(`https://loanbridge-backend.vercel.app/email/getmailuser`, {
+        email: email,
+      })
+      .then((r) => {
+        toast({
+          title: "Verification Code Send Successfully.",
+          status: "success",
+          duration: 3000,
+          position: "top",
+          isClosable: true,
+        });
+        setVerificationSent(true);
+      })
+      .catch((err) => {
+        toast({
+          title: "Check Your Email ID.",
+          description: "Something Went Wrong....",
+          status: "error",
+          duration: 3000,
+          position: "top",
+          isClosable: true,
+        });
+      });
+  };
+
+  const handleVerifyCode = () => {
+    if (code === "978654") {
+      toast({
+        title: "Email Verification Successfull..",
+        description: "Please Continue Form....",
+        status: "success",
+        duration: 3000,
+        position: "top",
+        isClosable: true,
+      });
+      setIsEmailVerified(true);
+      setEmailError("");
+    } else {
+      toast({
+        title: "Verification Code is incorrect.",
+        description: "Please Try Again....",
+        status: "error",
+        duration: 3000,
+        position: "top",
+        isClosable: true,
+      });
+      setIsEmailVerified(false);
     }
   };
 
@@ -256,27 +321,80 @@ const Form3 = ({ email, setemail, EmailError, setEmailError }) => {
         Email Address
       </Heading>
 
-      <FormControl mt="10" as={GridItem} colSpan={[6, 3, null, 2]}>
-        <Input
-          type="email"
-          placeholder={"Enter Your Email Address"}
-          name="email"
-          shadow="sm"
-          size="sm"
-          w="full"
-          py="1.5rem"
-          rounded="md"
-          fontSize="20px"
-          value={email}
-          onChange={handleEmailChange}
-          // onChange={(e) => setemail(e.target.value)}
-        />
-        {EmailError && (
-          <Text color="red.500" mt={2}>
-            {EmailError}
-          </Text>
-        )}
-      </FormControl>
+      <Box mt="1rem">
+        <FormControl mt="10" as={GridItem} colSpan={[6, 3, null, 2]}>
+          <Input
+            type="email"
+            placeholder={"Enter Your Email Address"}
+            name="email"
+            shadow="sm"
+            size="sm"
+            w="full"
+            py="1.5rem"
+            rounded="md"
+            fontSize="20px"
+            value={email}
+            onChange={handleEmailChange}
+            // onChange={(e) => setemail(e.target.value)}
+          />
+          {EmailError && (
+            <Text color="red.500" mt={2}>
+              {EmailError}
+            </Text>
+          )}
+        </FormControl>
+
+        <Button
+          mt="4"
+          fontSize="16px"
+          borderRadius="5px"
+          border="1px solid #1D36A0"
+          px="1rem"
+          color="#242f65"
+          bg="#fff"
+          _hover={{
+            backgroundColor: "#1D36A0",
+            color: "#fff",
+          }}
+          onClick={handleVerication}
+        >
+          Send Verification Code
+        </Button>
+      </Box>
+      {verificationSent && (
+        <Box>
+          <FormControl mt="5" as={GridItem} colSpan={[6, 3, null, 2]}>
+            <Input
+              type="text"
+              placeholder={"Enter Your Verification Code"}
+              shadow="sm"
+              size="sm"
+              w="full"
+              py="1.5rem"
+              rounded="md"
+              fontSize="20px"
+              onChange={(e) => setcode(e.target.value)}
+            />
+          </FormControl>
+
+          <Button
+            mt="4"
+            fontSize="16px"
+            borderRadius="5px"
+            border="1px solid #1D36A0"
+            px="1rem"
+            color="#242f65"
+            bg="#fff"
+            _hover={{
+              backgroundColor: "#1D36A0",
+              color: "#fff",
+            }}
+            onClick={handleVerifyCode}
+          >
+            Verify
+          </Button>
+        </Box>
+      )}
     </Box>
   );
 };
@@ -1664,6 +1782,7 @@ export default function MultiForm({ myDivRef }) {
   const [adharNoError, setadharNoError] = useState("");
   const [incomeSourceError, setincomeSourceError] = useState("");
   const [depositeError, setdepositeError] = useState("");
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
 
   const handleSubmit = async () => {
     if (step === 19 && !deposite) {
@@ -1696,7 +1815,6 @@ export default function MultiForm({ myDivRef }) {
       await axios
         .post(`https://loanbridge-backend.vercel.app/email/getmail`, payload)
         .then((r) => {
-          //   console.log(r.data);
           toast({
             title: "Form Submitted Successfully.",
             description: "Our Team Will Contact You Soon....",
@@ -1726,9 +1844,9 @@ export default function MultiForm({ myDivRef }) {
           setpaid("");
           setaccount("");
           setdeposite("");
+          setStep(1);
         })
         .catch((err) => {
-          console.log(err);
           toast({
             title: "Form Not Submitted Successfully.",
             description: "Something Went Wrong....",
@@ -1760,7 +1878,6 @@ export default function MultiForm({ myDivRef }) {
             step={step}
             setProgress={setProgress}
             progress={progress}
-            rup={rup}
             setrup={setrup}
           />
         ) : step === 2 ? (
@@ -1776,6 +1893,7 @@ export default function MultiForm({ myDivRef }) {
             setemail={setemail}
             EmailError={EmailError}
             setEmailError={setEmailError}
+            setIsEmailVerified={setIsEmailVerified}
           />
         ) : step === 4 ? (
           <Form4
@@ -2012,8 +2130,10 @@ export default function MultiForm({ myDivRef }) {
                       }
                       break;
                     case 3:
-                      if (!email) {
-                        setEmailError("Email is required");
+                      if (!email || EmailError || !isEmailVerified) {
+                        setEmailError(
+                          "Email is required and verify your email"
+                        );
                       } else {
                         setStep(step + 1);
                         setProgress(progress + 100 / 18);
