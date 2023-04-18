@@ -18,8 +18,7 @@ const Home = ({ myDivRef, handleGetLoanClick }) => {
   const isLg = useBreakpointValue({
     base: false,
     md: false,
-    lg: false,
-    xl: true,
+    lg: true,
   });
 
   return (
