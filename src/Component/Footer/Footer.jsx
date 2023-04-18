@@ -111,7 +111,7 @@ const Footer = ({ handleGetLoanClick }) => {
         bg={`url(${back})`}
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
-        backgroundSize="cover"
+        backgroundSize="100% 100%"
         p='5'
         py="6rem"
       >
