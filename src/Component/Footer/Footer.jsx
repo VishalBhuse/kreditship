@@ -32,7 +32,7 @@ const Footer = ({ handleGetLoanClick }) => {
             Why Choose Us?
           </Text>
         </Box>
-        <Box textAlign={"justify"} color="#555873" fontSize={"15px"}>
+        <Box textAlign={"justify"} color="#002257" fontSize={"15px"}>
           <Text>
             At our loan connecting service, we understand that every borrower is
             unique, with their own specific financial needs and goals. That's
@@ -69,7 +69,7 @@ const Footer = ({ handleGetLoanClick }) => {
             Ready to Get Started?
           </Text>
         </Box>
-        <Box textAlign={"justify"} color="#555873" fontSize={"15px"}>
+        <Box textAlign={"justify"} color="#002257" fontSize={"15px"}>
           <Text>
             If you're ready to get the loan you need, without all the stress and
             hassle of traditional lenders, then our loan connecting service is
