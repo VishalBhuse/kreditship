@@ -18,7 +18,7 @@ export const advantage = [
   {
     img: camera,
     text1: "Loans from $500",
-    text2: "YourStart Spending",
+    text2: "Start Spending",
     text3: "Receive funds in your account as soon as the next business day*",
   },
 ];
