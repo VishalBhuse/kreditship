@@ -121,7 +121,7 @@ const Footer = ({ handleGetLoanClick }) => {
         <Box
           w={["100%", "100%", "80%"]}
           mx="auto"
-          textAlign={["center", "center","center", "left"]}
+          textAlign={["center", "center", "center", "left"]}
         >
           <Heading
             color={"#2b335c"}
@@ -144,48 +144,47 @@ const Footer = ({ handleGetLoanClick }) => {
           </Text>
         </Box>
 
-        <Box textAlign={["center", "center","center", "left"]}>
-          <Box
-            w={["100%", "100%", "70%"]}
-            mx="auto"
-            display={"grid"}
-            placeItems="center"
+        <Box
+          textAlign={["center", "center", "center", "left"]}
+          w={["100%", "100%", "80%"]}
+          mx="auto"
+          display={"flex"}
+          justifyContent={["center", "center", "center", "left"]}
+        >
+          <Button
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            padding="14px 24px"
+            minHeight="54px"
+            minWidth={["60%", "220px", "220px"]}
+            fontFamily="Montserrat,Arial,sans-serif"
+            fontWeight="700"
+            fontSize="1rem"
+            color="#fff"
+            textAlign="center"
+            border="1px solid transparent"
+            borderRadius="4px"
+            background="#1d36a0"
+            cursor="pointer"
+            _hover={{
+              background: "#1d36a0",
+            }}
+            onClick={handleGetLoanClick}
           >
-            <Button
-              display="flex"
-              alignItems="center"
-              justifyContent="space-between"
-              padding="14px 24px"
-              minHeight="54px"
-              minWidth={["60%", "220px", "220px"]}
-              fontFamily="Montserrat,Arial,sans-serif"
-              fontWeight="700"
-              fontSize="1rem"
-              color="#fff"
-              textAlign="center"
-              border="1px solid transparent"
-              borderRadius="4px"
-              background="#1d36a0"
-              cursor="pointer"
-              _hover={{
-                background: "#1d36a0",
-              }}
-              onClick={handleGetLoanClick}
-            >
-              <Text>Apply Now</Text>
-              <Text fontSize={"1.5rem"}>
-                <MdOutlineArrowRightAlt />
-              </Text>
-            </Button>
-            <Image
-              position={"absolute"}
-              right="5%"
-              top={"0%"}
-              src={man}
-              alt="man"
-              display={["none", "none", "none", "block", "block"]}
-            />
-          </Box>
+            <Text>Apply Now</Text>
+            <Text fontSize={"1.5rem"}>
+              <MdOutlineArrowRightAlt />
+            </Text>
+          </Button>
+          <Image
+            position={"absolute"}
+            right="5%"
+            top={"5%"}
+            src={man}
+            alt="man"
+            display={["none", "none", "none", "block", "block"]}
+          />
         </Box>
       </Box>
 
