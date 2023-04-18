@@ -4,6 +4,7 @@ import {
   Divider,
   Heading,
   HStack,
+  Image,
   ListItem,
   SimpleGrid,
   Text,
@@ -13,6 +14,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import back from "../../Img/back.svg";
+import man from "../../Img/man.svg";
 
 const Footer = ({ handleGetLoanClick }) => {
   return (
@@ -105,6 +107,7 @@ const Footer = ({ handleGetLoanClick }) => {
       </SimpleGrid>
 
       <Box
+        position={"relative"}
         w="85%"
         mx="auto"
         my="10"
@@ -112,13 +115,13 @@ const Footer = ({ handleGetLoanClick }) => {
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize="100% 100%"
-        p='5'
+        p="5"
         py="6rem"
       >
         <Box
           w={["100%", "100%", "80%"]}
           mx="auto"
-          textAlign={["left", "left", "center"]}
+          textAlign={["center", "center","center", "left"]}
         >
           <Heading
             color={"#2b335c"}
@@ -126,24 +129,22 @@ const Footer = ({ handleGetLoanClick }) => {
             textTransform={"capitalize"}
             fontSize={["1.7rem", "3rem", "3rem"]}
           >
-            Get a Loan Today for a Better Tomorrow
+            Get a Loan Today <br /> for a Better Tomorrow
           </Heading>
-        </Box>
-
-        <Box>
           <Text
-            textAlign={["left", "left", "center"]}
             m="12px auto 24px"
-            fontSize="1rem"
+            fontSize={["0.8rem", "1rem", "1rem"]}
             lineHeight=" 1.2"
             color="#555873"
-            w={["100%", "100%", "70%"]}
             mx="auto"
             fontWeight="600"
           >
             Get a loan offer right away without a lot of hassle and I truly
             appreciate the speedy service.{" "}
           </Text>
+        </Box>
+
+        <Box textAlign={["center", "center","center", "left"]}>
           <Box
             w={["100%", "100%", "70%"]}
             mx="auto"
@@ -176,6 +177,14 @@ const Footer = ({ handleGetLoanClick }) => {
                 <MdOutlineArrowRightAlt />
               </Text>
             </Button>
+            <Image
+              position={"absolute"}
+              right="5%"
+              top={"0%"}
+              src={man}
+              alt="man"
+              display={["none", "none", "none", "block", "block"]}
+            />
           </Box>
         </Box>
       </Box>
@@ -211,7 +220,13 @@ const Footer = ({ handleGetLoanClick }) => {
         </Text>
       </Box>
 
-      <SimpleGrid columns={[1, 1, 1, 2]} spacing={[1,2,5]} w="85%" mx="auto" mt="10">
+      <SimpleGrid
+        columns={[1, 1, 1, 2]}
+        spacing={[1, 2, 5]}
+        w="85%"
+        mx="auto"
+        mt="10"
+      >
         <Box>
           <HStack justifyContent={["center", "center", "center", "flex-start"]}>
             <Link to={"/"}>
@@ -227,7 +242,11 @@ const Footer = ({ handleGetLoanClick }) => {
         </Box>
 
         <Box textAlign={"center"}>
-          <Text fontWeight={"500"} color="#555873" fontSize={{ base: "0.4rem", sm: "0.6rem", md: "1rem" }}>
+          <Text
+            fontWeight={"500"}
+            color="#555873"
+            fontSize={{ base: "0.4rem", sm: "0.6rem", md: "1rem" }}
+          >
             Copyright © 2023 kreditship <br /> All Rights Reserved
           </Text>
         </Box>
