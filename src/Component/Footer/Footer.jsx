@@ -180,7 +180,7 @@ const Footer = ({ handleGetLoanClick }) => {
         </Box>
       </Box>
 
-      <Divider h="0.5px" bg="grey" />
+      <Divider h="0.3px" bg="#ebedf8" />
 
       <Box
         w="75%"
@@ -211,7 +211,7 @@ const Footer = ({ handleGetLoanClick }) => {
         </Text>
       </Box>
 
-      <SimpleGrid columns={[1, 1, 1, 2]} spacing={5} w="85%" mx="auto" mt="10">
+      <SimpleGrid columns={[1, 1, 1, 2]} spacing={[1,2,5]} w="85%" mx="auto" mt="10">
         <Box>
           <HStack justifyContent={["center", "center", "center", "flex-start"]}>
             <Link to={"/"}>
@@ -227,8 +227,8 @@ const Footer = ({ handleGetLoanClick }) => {
         </Box>
 
         <Box textAlign={"center"}>
-          <Text fontWeight={"400"} color="#555873" fontSize={"1rem"}>
-            Copyright © 2023 kreditship. <br /> All Rights Reserved
+          <Text fontWeight={"500"} color="#555873" fontSize={{ base: "0.4rem", sm: "0.6rem", md: "1rem" }}>
+            Copyright © 2023 kreditship <br /> All Rights Reserved
           </Text>
         </Box>
       </SimpleGrid>

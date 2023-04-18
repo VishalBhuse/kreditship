@@ -18,12 +18,12 @@ const Home = ({ myDivRef, handleGetLoanClick }) => {
     <>
       <Banner myDivRef={myDivRef} />
 
-      <Box w="85%" mx="auto" my="8rem">
+      <Box w="85%" mx="auto" my="7rem">
         <Box textAlign="center">
           <Heading
             color={"#2b335c"}
             fontWeight="700"
-            fontSize={["1.7rem", "3rem", "3rem"]}
+            fontSize={["1.7rem", "2.5rem", "2.5rem"]}
           >
             Simple as one, two, three...
           </Heading>
