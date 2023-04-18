@@ -22,8 +22,8 @@ const About = ({ myDivRef }) => {
             fontSize={"1rem"}
             lineHeight={1.2}
           >
-            At Loanbridge Pro, we're committed to making it easier for borrowers
-            to find the right loan for their unique financial needs. Our loan
+            At kreditship, we're committed to making it easier for borrowers to
+            find the right loan for their unique financial needs. Our loan
             connecting service matches you with trusted lenders who offer a
             variety of loan options, including personal loans, business loans,
             and more.
@@ -36,9 +36,9 @@ const About = ({ myDivRef }) => {
             who meet your needs.
             <br />
             <br />
-            At Loanbridge Pro, we prioritize your privacy and security, and
-            we're committed to providing exceptional customer service. Best of
-            all, our service is completely free to use with no hidden fees or
+            At kreditship, we prioritize your privacy and security, and we're
+            committed to providing exceptional customer service. Best of all,
+            our service is completely free to use with no hidden fees or
             charges.
             <br />
             <br />

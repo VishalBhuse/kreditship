@@ -1,27 +1,24 @@
-import logo from "../Img/adv.svg";
+import adv from "../Img/adv.svg";
 import watch from "../Img/watch.svg";
 import camera from "../Img/camera.svg";
 
 export const advantage = [
   {
-    img: logo,
+    img: adv,
     text1: "Safe & Secure",
-    text2: "Connect with a Helpful Lender",
-    text3:
-      "We commit to connecting you with an approved lender. We also made the process simple. No need to visit hundreds of websites and fill out numerous paperwork.",
+    text2: "Request Funds",
+    text3: "Submit your loan request from anywhere with any device.",
   },
   {
     img: watch,
     text1: "As Fast As 24 Hrs",
-    text2: "The Need for Speed",
-    text3:
-      "If you have questions regarding a loan inquiry, approval, funded loan, payments or any other question about a particular loan, please contact your lender or lending partner directly. If you received a loan, you should already have the lender’s or lending partner’s contact information.   ",
+    text2: "Get Your Results",
+    text3: "You can receive a lender approval within just a few minutes.",
   },
   {
     img: camera,
     text1: "Loans from $500",
-    text2: "Your Loan, Your Business",
-    text3:
-      "We recognize a personal loan is a private matter. Reasons for needing money range from critical automobile maintenance, unexpected medical expenses, much needed family vacation, basic home improvements, etc. ",
+    text2: "YourStart Spending",
+    text3: "Receive funds in your account as soon as the next business day*",
   },
 ];

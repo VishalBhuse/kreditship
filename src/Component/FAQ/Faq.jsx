@@ -31,16 +31,16 @@ const Faq = ({ myDivRef }) => {
             fontSize={"1rem"}
             textAlign={"justify"}
           >
-            Loanbridge Pro provides a marketplace service where your loan
-            request is submitted to a network of reputable lenders. Our service
-            is always free--there is never a cost to you for submitting an
-            inquiry. Your lender will have its own rates and fees that will be
-            provided to you before you accept the loan. Loanbridge Pro is not a
-            lender and does not make credit decisions.
+            kreditship provides a marketplace service where your loan request is
+            submitted to a network of reputable lenders. Our service is always
+            free--there is never a cost to you for submitting an inquiry. Your
+            lender will have its own rates and fees that will be provided to you
+            before you accept the loan. kreditship is not a lender and does not
+            make credit decisions.
             <br />
             <br />
-            New customers may have questions about Loanbridge Pro, which is why
-            we have compiled the most common questions below. If you have a
+            New customers may have questions about kreditship, which is why we
+            have compiled the most common questions below. If you have a
             question that is not answered here, we are happy to answer your
             questions.
             <br />

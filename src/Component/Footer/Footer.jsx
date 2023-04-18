@@ -12,6 +12,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import back from "../../Img/back.svg";
 
 const Footer = ({ handleGetLoanClick }) => {
   return (
@@ -103,7 +104,17 @@ const Footer = ({ handleGetLoanClick }) => {
         </Box>
       </SimpleGrid>
 
-      <Box w="85%" mx="auto" my="10">
+      <Box
+        w="85%"
+        mx="auto"
+        my="10"
+        bg={`url(${back})`}
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+        backgroundSize="cover"
+        p='5'
+        py="6rem"
+      >
         <Box
           w={["100%", "100%", "80%"]}
           mx="auto"
@@ -171,6 +182,35 @@ const Footer = ({ handleGetLoanClick }) => {
 
       <Divider h="0.5px" bg="grey" />
 
+      <Box
+        w="75%"
+        mx="auto"
+        textAlign={"center"}
+        fontSize="12px"
+        color="#a6b2c4"
+        my="5"
+      >
+        <Text>
+          The operator of this website is NOT a lender or a broker, does not
+          make offers for loans and does not charge you for any service or
+          products. This site allows you to submit your information to our
+          network of lenders to determine if they maybe be able to offer you a
+          personal loan ranging from $100 up to $10,000. The actual amounts,
+          terms, and APR a customer could qualify for will vary based on credit
+          scores, individual lender requirements, and state laws. Not all
+          lenders can provide up to $10,000. Services are not available in all
+          states. Credit checks may be obtained by some lenders. By using our
+          content and services, you agree to our Terms of Website Use, Privacy
+          Policy, and Disclaimer .
+        </Text>
+        <br />
+        <Text>
+          Mintcrednow.com will share the information you provide with
+          participating lenders, advertisers, networks, and other partners who
+          may not lend or issue credit, including debt settlement companies.
+        </Text>
+      </Box>
+
       <SimpleGrid columns={[1, 1, 1, 2]} spacing={5} w="85%" mx="auto" mt="10">
         <Box>
           <HStack justifyContent={["center", "center", "center", "flex-start"]}>
@@ -180,15 +220,15 @@ const Footer = ({ handleGetLoanClick }) => {
                 color="#242f65"
                 fontSize={{ base: "15px", sm: "17px", md: "29px" }}
               >
-                Loanbridge Pro
+                kreditship
               </Text>
             </Link>
           </HStack>
         </Box>
 
         <Box textAlign={"center"}>
-          <Text fontWeight={"500"} color="#555873" fontSize={"1rem"}>
-            Copyright © 2023 Loanbridge Pro. <br /> All Rights Reserved
+          <Text fontWeight={"400"} color="#555873" fontSize={"1rem"}>
+            Copyright © 2023 kreditship. <br /> All Rights Reserved
           </Text>
         </Box>
       </SimpleGrid>

@@ -78,7 +78,7 @@ const Navbar = ({ handleGetLoanClick }) => {
                   display={["block", "block", "none"]}
                   fontSize={{ base: "15px", sm: "17px", md: "29px" }}
                 >
-                  Loanbridge Pro
+                  kreditship
                 </Text>
               </Link>
             </Stack>
@@ -104,7 +104,7 @@ const DesktopNav = ({ handleGetLoanClick }) => {
     >
       <Link to={"/"}>
         <Text fontSize={"1.5rem"} fontWeight="700">
-          Loanbridge Pro
+          kreditship
         </Text>
       </Link>
       <HStack

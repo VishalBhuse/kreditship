@@ -18,24 +18,24 @@ const Home = ({ myDivRef, handleGetLoanClick }) => {
     <>
       <Banner myDivRef={myDivRef} />
 
-      <Box w="85%" mx="auto" my="10">
-        <Box>
+      <Box w="85%" mx="auto" my="8rem">
+        <Box textAlign="center">
           <Heading
             color={"#2b335c"}
             fontWeight="700"
             fontSize={["1.7rem", "3rem", "3rem"]}
           >
-            Our Main Advantages
+            Simple as one, two, three...
           </Heading>
         </Box>
 
-        <Box my="12">
+        <Box my="5rem" textAlign="center">
           <SimpleGrid
             columns={[1, 1, 1, 1, 3]}
             spacing={["2rem", "2rem", "2rem", "2rem", "7rem"]}
           >
             {advantage?.map((item, ind) => (
-              <VStack alignItems="flex-start" key={ind}>
+              <VStack key={ind}>
                 <Image src={item.img} alt="adv" />
                 <Text color={"#1d36a0"} fontWeight="500" fontSize={"0.9rem"}>
                   {item.text1}
