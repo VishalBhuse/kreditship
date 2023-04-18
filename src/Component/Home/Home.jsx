@@ -6,15 +6,17 @@ import {
   Image,
   SimpleGrid,
   Text,
+  useBreakpointValue,
   VStack,
 } from "@chakra-ui/react";
 import { advantage } from "../../Data/Data";
 import Banner from "./Banner";
 import dottedpatterne from "../../Img/dottedpatterne.svg";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
-// import camera from "../../Img/camera.svg";
 
 const Home = ({ myDivRef, handleGetLoanClick }) => {
+  const isLg = useBreakpointValue([false, false, false, false, true]);
+
   return (
     <>
       <Banner myDivRef={myDivRef} />
@@ -40,7 +42,8 @@ const Home = ({ myDivRef, handleGetLoanClick }) => {
                 key={ind}
                 position={"relative"}
                 _after={
-                  (ind === 0 || ind === 1) && {
+                  (ind === 0 || ind === 1) &&
+                  isLg && {
                     content: '""',
                     top: "10%",
                     position: "absolute",
