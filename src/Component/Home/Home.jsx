@@ -51,16 +51,6 @@ const Home = ({ myDivRef, handleGetLoanClick }) => {
                     height: "1px",
                   }
                 }
-                // _after={{
-                //   content: '""',
-                //   top: "10%",
-                //   position: "absolute",
-                //   bg: "#0064ff",
-                //   left: "60%",
-                //   display: "block",
-                //   width: "90%",
-                //   height: "1px",
-                // }}
               >
                 <Image src={item.img} alt="adv" />
                 <Text color={"#1d36a0"} fontWeight="500" fontSize={"0.9rem"}>
