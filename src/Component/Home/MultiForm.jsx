@@ -22,7 +22,7 @@ import { MAINURL } from "../../Data/BackendURL";
 const Form1 = ({ step, setStep, progress, setProgress, setrup }) => {
   return (
     <Box
-      h="80%"
+      h="70%"
       // h={["55vh", "auto", "auto", "auto", "100%"]}
     >
       <Heading
@@ -196,7 +196,7 @@ const Form2 = ({
   };
 
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -259,7 +259,7 @@ const Form3 = ({
 
   const handleVerication = async () => {
     await axios
-      .post(MAINURL+`/email/getmailuser`, {
+      .post(MAINURL + `/email/getmailuser`, {
         email: email,
       })
       .then((r) => {
@@ -310,7 +310,7 @@ const Form3 = ({
   };
 
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -429,7 +429,7 @@ const Form4 = ({
     }
   };
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -509,7 +509,7 @@ const Form5 = ({
   };
 
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -581,7 +581,7 @@ const Form6 = ({
   };
 
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -642,7 +642,7 @@ const Form6 = ({
 
 const Form7 = ({ setowner, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -718,7 +718,7 @@ const Form7 = ({ setowner, setStep, step, setProgress, progress }) => {
 
 const Form8 = ({ setcar, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -794,7 +794,7 @@ const Form8 = ({ setcar, setStep, step, setProgress, progress }) => {
 
 const Form9 = ({ setmilitary, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -880,7 +880,7 @@ const Form10 = ({ setdob, dobError, setdobError, dob }) => {
     }
   };
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -924,7 +924,7 @@ const Form10 = ({ setdob, dobError, setdobError, dob }) => {
 
 const Form11 = ({ setdebtoffers, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1009,7 +1009,7 @@ const Form12 = ({ setadharNo, adharNo, adharNoError, setadharNoError }) => {
     }
   };
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1048,7 +1048,7 @@ const Form12 = ({ setadharNo, adharNo, adharNoError, setadharNoError }) => {
 
 const Form13 = ({ setincome, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1124,7 +1124,7 @@ const Form13 = ({ setincome, setStep, step, setProgress, progress }) => {
 
 const Form14 = ({ setmonthIncome, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1137,7 +1137,7 @@ const Form14 = ({ setmonthIncome, setStep, step, setProgress, progress }) => {
       </Heading>
 
       <Text color="#666d93" fontSize={"14px"} textAlign="center">
-        Select your total income before taxes and include all sources of income.
+        Select your total income before taxes.
       </Text>
 
       <FormControl mt="2%">
@@ -1346,7 +1346,7 @@ const Form15 = ({
     }
   };
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1390,7 +1390,7 @@ const Form15 = ({
 
 const Form16 = ({ setpaycheck, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1466,7 +1466,7 @@ const Form16 = ({ setpaycheck, setStep, step, setProgress, progress }) => {
 
 const Form17 = ({ setpaid, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1597,7 +1597,7 @@ const Form17 = ({ setpaid, setStep, step, setProgress, progress }) => {
 
 const Form18 = ({ setaccount, setStep, step, setProgress, progress }) => {
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1682,7 +1682,7 @@ const Form19 = ({ setdeposite, deposite, depositeError, setdepositeError }) => {
     }
   };
   return (
-    <Box h="80%">
+    <Box h="70%">
       <Heading
         w="100%"
         textAlign={"center"}
@@ -1726,7 +1726,7 @@ const Form19 = ({ setdeposite, deposite, depositeError, setdepositeError }) => {
 
 export default function MultiForm({ myDivRef }) {
   const toast = useToast();
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(14);
   const [progress, setProgress] = useState(0);
   const [rup, setrup] = useState(0);
   const [creditScore, setcreditScore] = useState("");
@@ -1814,7 +1814,7 @@ export default function MultiForm({ myDivRef }) {
       };
 
       await axios
-        .post(MAINURL+`/email/getmail`, payload)
+        .post(MAINURL + `/email/getmail`, payload)
         .then((r) => {
           toast({
             title: "Form Submitted Successfully.",
@@ -2030,8 +2030,11 @@ export default function MultiForm({ myDivRef }) {
         <br />
 
         <ButtonGroup w="100%">
-          <Flex w="100%" justifyContent="center">
-            <HStack>
+          <Flex w="100%" justifyContent="center" alignItems={"center"}>
+            <HStack
+              flexDirection={{ base: "column", sm: "row" }}
+              gap={["1rem", "1rem", "1rem", "2rem", "2rem"]}
+            >
               <Button
                 onClick={() => {
                   setStep(step - 1);
@@ -2057,6 +2060,7 @@ export default function MultiForm({ myDivRef }) {
                 Back
               </Button>
               <Button
+                mt={{ base: 2, md: 0 }}
                 display={
                   step === 1 ||
                   step === 7 ||
@@ -2072,54 +2076,6 @@ export default function MultiForm({ myDivRef }) {
                     ? "none"
                     : "inline-flex"
                 }
-                // onClick={() => {
-                //   if (step === 2 && !creditScore) {
-                //     setCreditScoreError("Credit score is requireds");
-                //   } else if (step === 3 && !email) {
-                //     setEmailError("Email is requireds");
-                //   } else if (step === 4 && (!FirstName || !LastName)) {
-                //     if (!FirstName) {
-                //       setFirstNameError("First Name is required");
-                //     } else {
-                //       setFirstNameError("");
-                //     }
-                //     if (!LastName) {
-                //       setLastNameError("Last Name is required");
-                //     } else {
-                //       setLastNameError("");
-                //     }
-                //   } else if (step === 5 && !phoneNumber) {
-                //     setphoneNumberError("Phone Number is requireds");
-                //   } else if (step === 6 && (!zipCode || !address)) {
-                //     if (!zipCode) {
-                //       setzipCodeError("Zip Code is required");
-                //     } else {
-                //       setzipCodeError("");
-                //     }
-                //     if (!address) {
-                //       setaddressError("Address is required");
-                //     } else {
-                //       setaddressError("");
-                //     }
-                //   } else if (step === 10 && !dob) {
-                //     setdobError("Date OF Birth is requireds");
-                //   } else if (step === 12 && !adharNo) {
-                //     setadharNoError("Adhar No is required");
-                //   } else if (step === 15 && !incomeSource) {
-                //     setincomeSourceError("Employer Information is required");
-                //   }
-                //   // else if (step === 19 && !deposite) {
-                //   //   setdepositeError("Account Number is required");
-                //   // }
-                //   else {
-                //     setStep(step + 1);
-                //     // if (step === 6) {
-                //     //   setProgress(100);
-                //     // } else {
-                //     // }
-                //     setProgress(progress + 5);
-                //   }
-                // }}
                 onClick={() => {
                   switch (step) {
                     case 2:

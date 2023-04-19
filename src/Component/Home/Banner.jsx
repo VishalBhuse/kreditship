@@ -14,6 +14,7 @@ const Banner = ({ myDivRef }) => {
       backgroundSize="cover"
       color="#fff"
       h="100%"
+      py="5"
     >
       <Box w="85%" mx="auto" mb="2">
         <SimpleGrid columns={[1, 1, 1, 2]} spacing={["1rem", "1rem", "4rem"]}>
@@ -41,7 +42,7 @@ const Banner = ({ myDivRef }) => {
             p={5}
             w="100%"
             m="10px auto"
-            h="530px"
+            h={"550px"}
           >
             {/* <MyForm inputRef={inputRef}/> */}
             <MultiForm myDivRef={myDivRef}/>
