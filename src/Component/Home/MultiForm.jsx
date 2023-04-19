@@ -2036,6 +2036,7 @@ export default function MultiForm({ myDivRef }) {
               gap={["1rem", "1rem", "1rem", "2rem", "2rem"]}
             >
               <Button
+              ml={{ base: "4px", sm: "0px" }}
                 onClick={() => {
                   setStep(step - 1);
                   setProgress(progress - 5);
