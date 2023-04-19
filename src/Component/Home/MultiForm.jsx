@@ -1726,7 +1726,7 @@ const Form19 = ({ setdeposite, deposite, depositeError, setdepositeError }) => {
 
 export default function MultiForm({ myDivRef }) {
   const toast = useToast();
-  const [step, setStep] = useState(14);
+  const [step, setStep] = useState(1);
   const [progress, setProgress] = useState(0);
   const [rup, setrup] = useState(0);
   const [creditScore, setcreditScore] = useState("");
