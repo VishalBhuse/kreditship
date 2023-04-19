@@ -26,7 +26,7 @@ const Banner = ({ myDivRef }) => {
               px="5"
             >
               <Text fontSize=".875rem" fontWeight="500" mt="2">
-                Connect with a Helpful Lender
+              Our streamlined process makes it easy for you.
               </Text>
               <Heading fontSize={["1.75rem", "1.75rem", "4rem"]} as="h1">
                 Get Matched with Your Ideal Loan Lender in next 48 hrs{" "}
