@@ -188,12 +188,12 @@ const Footer = ({ handleGetLoanClick }) => {
         </Box>
       </Box>
 
-      <Divider h="0.3px" bg="#ebedf8" />
+      <Divider h="0.3px" bg="#ebedf8" mt={["2rem","3rem","5rem"]} />
 
       <Box
         w="75%"
         mx="auto"
-        textAlign={"center"}
+        textAlign={["justify", "justify", "center"]}
         fontSize="12px"
         color="#a6b2c4"
         my="5"
@@ -220,7 +220,7 @@ const Footer = ({ handleGetLoanClick }) => {
       </Box>
 
       <SimpleGrid
-        columns={[1, 1, 1, 2]}
+        columns={2}
         spacing={[1, 2, 5]}
         w="85%"
         mx="auto"
